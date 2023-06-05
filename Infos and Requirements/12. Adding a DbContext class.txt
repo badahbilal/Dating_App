@@ -1,0 +1,15 @@
+Unit Of Work :
+
+In .NET development, a unit of work is a design pattern that helps to manage transactions across multiple database operations. It's a higher-level abstraction that allows a developer to group together multiple operations into a single transaction. This helps to ensure consistency and maintain data integrity in the event of an error or exception during the transaction. The Unit of Work pattern typically involves defining a context object that handles the transaction and tracks changes made to the data, as well as repository objects that perform the actual database operations. It's a commonly used pattern in Object-Relational Mapping (ORM) frameworks like Entity Framework.
+
+
+Repository pattern is a design pattern :
+
+The Repository pattern is a design pattern that separates the logic for accessing and manipulating data from the rest of the application. It provides a standardized interface (repository) for performing CRUD operations on entities, abstracting away the details of the data storage implementation. The pattern promotes code reusability, testability, and a separation of concerns by centralizing data access logic and shielding the application from the underlying data storage technology.
+
+
+
+ctrl + p >>> For search a specific file
+
+
+
