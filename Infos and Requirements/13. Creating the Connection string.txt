@@ -1,0 +1,20 @@
+# This command lists all globally installed .NET tools in the current environment.
+dotnet tool list -g
+
+
+# This command installs the dotnet-ef tool globally in the .NET environment.
+# The tool version 7.0.5 is specified for installation.
+dotnet tool install --global dotnet-ef --version 7.0.5
+
+
+# This command generates a new migration named "InitialCreate" using the Entity Framework Core tools.
+# The generated migration files will be placed in the "Data/Migrations" directory.
+dotnet ef migrations add InitialCreate -o Data/Migrations
+
+
+# This command removes the last generated migration from the project using the Entity Framework Core tools.
+dotnet ef migrations remove
+
+
+
+
