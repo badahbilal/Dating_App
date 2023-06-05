@@ -1,0 +1,23 @@
+VSCode Extensions for C# :
+
+- C#
+    |------> Settings : - Enable Async Compilation
+                        - Enable Import Compilation 
+                        If as we're typing our code, we need to import something from another namespace, then it automatically If as we're typing our code, we need to import something from another namespace, then it automatically
+                        - Organize Imports On Format
+                        - Path : Write into it Latest 
+
+- C# Extensions By JostKreativ : gives us an option to create a new class and fill out some of the boilerplate code for us
+- Material Icon Theme
+
+
+Advices :  
+- File / Auto Save File
+- VSCode Settings : - Search for compact and disabled Explorer :  Compact Folders
+
+
+Trick :
+Any problem in VTS code, I promise you 99 times out of 100 can be resolved by this trick.
+ctrl + shift + p >>>> Developper reload Window.
+ctrl + shift + ù >>>> Open Terminal.
+ctrl + , >>>> Open Vs Code Settings.
