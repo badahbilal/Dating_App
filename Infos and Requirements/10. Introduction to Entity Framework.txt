@@ -1,0 +1,31 @@
+What is it? 
+An Object Relational Mapper (ORM) 
+Translates our code into SQL commands that update our tables in the database
+
+Entity Framework Features 
+• Querying 
+• Change Tracking 
+• Saving 
+• Concurrency 
+• Transactions 
+• Caching 
+• Built-in conventions 
+• Configurations 
+• Migrations
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
