@@ -1,0 +1,12 @@
+VScode - Hide Files
+Visual studio code hides files and folders from the sidebar
+Open Visual studio code
+Go to File > Preferences > Settings
+Opened the settings page
+type “files:exclude” in search settings
+In Files:Exclude Section, Click on the Add Pattern button
+It enables the input box and types folder or file name inside it. Click Ok to save it.
+Inside the text box, you can add folders, files, or regular expressions to point the path of the file.
+
+
+files that we exclude **/obj and **/bin
