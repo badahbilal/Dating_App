@@ -1,0 +1,13 @@
+we search for neuget in the extensions search then the one that I quite like lately
+NuGet gallery extension for vsCode allow us to install packages in our solution
+
+ctrl + shift + p >>> Nuget : Open Gallery Extension
+
+
+
+
+microsoft.EntityFrameworkCore.Sqlite
+microsoft.EntityFrameworkCore.Design
+
+
+
