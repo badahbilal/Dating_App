@@ -1,0 +1,14 @@
+.vsCode Foldre : This is specifically for VS code debugging and just helper folders or helper files to help whatever tool you're using to debug And we got this when we installed a particular extension OmniSharp.
+    | >>>> ctrl + shift + p to generate Assets and Builde and Debug
+
+dotnet run -h
+dotnet run -h -lp : Launch profile name (if any) to use when launching the application.
+
+
+dotnet restore :  when we install packages or remove them, then to clean up our project and either add them or remove them, we executed and restore and now they'll be removed from my application.
+
+dotent watch run : if I execute dot net watch run, then since dot net six we've had this feature for hot reload of our project
+
+
+
+
