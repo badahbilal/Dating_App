@@ -1,0 +1,12 @@
+# This command provides help and information about the available database-related commands of Entity Framework Core tools.
+dotnet ef database -h
+
+# This command applies any pending migrations to the database using the Entity Framework Core tools.
+# It updates the database schema to match the latest migration.
+dotnet ef database update
+
+
+Extension 
+
+SQlite (VSCode extension to explore and query SQLite databases.) allows us to explore and query a SQL database.
+ctrl + shift + p >>>> sqlite open database
