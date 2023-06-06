@@ -1,0 +1,13 @@
+To add _ to any attribute automatically generated go to VSCode Extensions, then shoose "C# Extenion" andc right click on the setting 
+You will find input name "Private Member Prefix" add "_" inside the input 
+and disable "Use This for Ctor Assignments"
+
+================================================================================================================================
+
+Inside Postman Create new workspaces than click on new collection and finally add request to our api
+https://localhost:7267/api/users   Get All Users 
+https://localhost:7267/api/users/2 Get One User By Id
+
+================================================================================================================================
+
+To disable verified SSL certificates Inside Postman Go File >> Setting >> disable verified SSL certificates :  disable that verification because we simply cannot verify against a trusted root authority that our DOT net certificate is valid
