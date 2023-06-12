@@ -1,0 +1,31 @@
+ngx-bootstrap
+https://valor-software.com/ngx-bootstrap/#/
+
+The link you provided, https://valor-software.com/ngx-bootstrap/#/, appears to be the website for ngx-bootstrap, which is a library of Bootstrap components and directives for Angular applications. ngx-bootstrap provides a set of pre-built UI components that are styled using Bootstrap's CSS framework and can be easily integrated into Angular projects.
+
+
+# This command installs the ngx-bootstrap library in the project.
+# The ngx-bootstrap library provides Angular directives and components that are based on the Bootstrap framework.
+# The 'npm install' command is used to fetch and install the ngx-bootstrap package and its dependencies.
+npm install ngx-bootstrap
+
+
+# This command adds the ngx-bootstrap library to the Angular project.
+# The ngx-bootstrap library provides Angular directives and components that are based on the Bootstrap framework.
+# The command uses the Angular CLI's 'ng add' command to automatically install and configure ngx-bootstrap in the project.
+ng add ngx-bootstrap
+
+
+
+we can use a content delivery network and just add it to our indexed HTML as suggested here.
+
+
+
+
+npm install bootstrap@5 
+npm install font-awesome
+
+
+
+
+
