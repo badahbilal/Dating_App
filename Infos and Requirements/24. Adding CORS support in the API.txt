@@ -1,0 +1,11 @@
+give me short explaining of CORS
+
+CORS stands for Cross-Origin Resource Sharing. It is a security mechanism implemented in web browsers that governs how resources on a web page can be accessed from different domains or origins.
+
+When a web page makes a request to a different domain, the browser enforces the same-origin policy, which restricts the ability to access resources across different domains. This policy is in place to prevent malicious scripts from accessing sensitive data.
+
+CORS allows controlled access to resources from different origins by adding additional HTTP headers to the requests and responses exchanged between the browser and the server. These headers specify which domains are allowed to access the resources and what types of requests (HTTP methods) are permitted.
+
+To enable CORS, the server must respond to the browser's requests with the appropriate CORS headers, which include "Access-Control-Allow-Origin" to specify the allowed domains and "Access-Control-Allow-Methods" to specify the permitted HTTP methods.
+
+By enforcing CORS, web applications can maintain security while still allowing controlled sharing of resources across different origins. It helps to prevent cross-site scripting attacks and protects user data.
