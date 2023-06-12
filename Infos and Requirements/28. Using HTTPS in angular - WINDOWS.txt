@@ -1,0 +1,42 @@
+To install The Certification on your Pc Windows Follow This Steps
+
+You will Find The Certification in Side Infos And Requirements Folder/Requirements
+
+Windows 10
+
+	1. Double click on the certificate (server.crt)
+	2. Click on the button “Install Certificate …”
+	3. Select whether you want to store it on user level or on machine level
+	4. Click “Next”
+	5. Select “Place all certificates in the following store”
+	6. Click “Browse”
+	7. Select “Trusted Root Certification Authorities”
+	8. Click “Ok”
+	9. Click “Next”
+	10. Click “Finish”
+
+If you get a prompt, click “Yes”
+
+
+//================================================================
+Next Copy server.crt & server.key To your Angular Project
+Add folder Named as ssl
+copy and paste the certificate server.crt & server.key to SSL Folder
+
+
+//================================================================
+And now we need to tell Angular to use these files and run over SSL.
+So the way that we do that is we go into the angular JSON file and we're looking for a section called Serve So this is the build section.
+So this is the build section.
+We're purely interested in our client development server, which uses the serve configuration.
+And inside here we need to create another configuration section called Options.
+And inside this option section, we're going to specify the SSL cert, and we're going to specify 
+
+In resume : 
+"options": {
+    "sslCert": "./ssl/server.crt",
+    "sslKey": "./ssl/server.key",
+    "ssl": true
+    },
+
+add those lines inside angular.json file bloc "serve": 
