@@ -51,7 +51,7 @@ And then the next part of this below this comment is what's referred to as the H
 // It is important to configure CORS policies carefully in production environments to
 // ensure appropriate security and access control.
 
-app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200"));
+app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200"));
 
 
 app.MapControllers();
