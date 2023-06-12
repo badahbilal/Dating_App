@@ -1,0 +1,11 @@
+The main difference between ".NET Core Launch" and ".NET Core Attach" in VS Code's debug configuration relates to how the debugger is attached to the application.
+
+.NET Core Launch: This debug configuration launches the application directly from VS Code. It starts a new instance of the application and attaches the debugger to it. When using ".NET Core Launch," you can specify various launch parameters, such as the program to run, command-line arguments, environment variables, and more.
+
+.NET Core Attach: This debug configuration allows you to attach the debugger to an already running .NET Core application. It is useful when you have a running application outside of VS Code, and you want to debug it. When using ".NET Core Attach," you need to provide the process ID (PID) of the target application to attach the debugger to it.
+
+In summary, ".NET Core Launch" launches and runs the application from within VS Code, while ".NET Core Attach" attaches the debugger to an already running application. The choice between them depends on whether you want to start a new instance of the application or debug an existing running instance.
+
+
+
+.Net Core Attach allow you to debug a process already running.
