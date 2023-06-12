@@ -1,0 +1,9 @@
+
+# This command starts the Angular development server and opens the application in the default browser.
+# The "-o" flag is used to automatically open the application in the default browser after starting the server.
+ng serve -o
+
+
+
+
+-Now, our app route is a angular component and we have a route component called the app components.
