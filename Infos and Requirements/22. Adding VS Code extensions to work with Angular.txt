@@ -1,0 +1,29 @@
+VSCode Extensions For Coding with Angular
+
+-Angular Language Service
+This extension provides a rich editing experience for Angular templates, both inline and external templates including:
+Completions lists
+AOT Diagnostic messages
+Quick info
+Go to definition
+
+
+Some Settings :
+
+1) Settings Look For "bracket" :
+
+Enabled : Editor > Bracket Pair Colorization : Enabled 
+Controls whether bracket pair colorization is enabled or not. Use Workbench : Color Customizations to override the bracket highlight colors.
+
+Disabled : Editor > Bracket Pair Colorization : Independent Color Pool Per Bracket Type 
+Controls whether each bracket type has its own independent color pool.
+
+2) Look For "Auto close" 
+
+-Editor : Auto Closing Brackets 
+Controls whether the editor should automatically close brackets after the user adds an opening bracket. 
+always 
+
+-Editor : Auto Closing Quotes 
+Controls whether the editor should automatically close quotes after the user adds an opening quote. 
+always
