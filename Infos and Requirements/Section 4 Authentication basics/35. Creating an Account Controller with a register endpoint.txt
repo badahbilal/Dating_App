@@ -1,0 +1,4 @@
+Inside Postman click on the Collection name 
+than go to Variables 
+You will find Variable Named URL 
+U can make the change here with your port number
