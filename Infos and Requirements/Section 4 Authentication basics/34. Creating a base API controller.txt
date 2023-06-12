@@ -1,0 +1,4 @@
+inside Postman 
+click on Import to import files from StudentAssets
+Choose DatingApp.postman_collection.json
+Click open
