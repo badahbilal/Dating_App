@@ -1,0 +1,7 @@
+# This command installs the Angular CLI globally in the Node.js environment.
+# The specific version 14 of the Angular CLI is specified for installation.
+ng install -g @angular/cli@14
+
+
+# This command creates a new Angular project named "client" using the Angular CLI.
+ng new client
