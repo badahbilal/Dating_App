@@ -1,0 +1,16 @@
+what is an observable in angular? 
+
+In Angular, an observable is a representation of a stream of data that can be observed over time. It is part of the RxJS (Reactive Extensions for JavaScript) library, which provides a set of tools for handling asynchronous data streams.
+
+Think of an observable as a container for data that is not available all at once but arrives incrementally or asynchronously. It allows you to handle events, HTTP requests, user interactions, and other asynchronous operations in a consistent and reactive manner.
+
+Observables are used extensively in Angular to handle data flows between components, services, and other parts of an application. They provide powerful features such as the ability to transform, filter, and combine streams of data using operators. Observables also support features like error handling, cancellation, and retrying.
+
+By subscribing to an observable, you can receive and process the data emitted by the stream. Observables provide a clean and efficient way to handle asynchronous operations in Angular applications, promoting a more reactive and responsive programming style.
+
+Observables are lazy by nature and they will not happen if nobody's observing them. So in order to observe an observable, we need to subscribe to it. And this is going to force our request to go and get the data. So we need to subscribe and then we can describe in the subscribe method what we want to do with this particular observable. Now what we get back is an object called an observer, and we open curly brackets here and then we describe what we want to do at the different stages of this potential stream of data.
+
+
+
+
+

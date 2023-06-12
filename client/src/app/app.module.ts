@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+// The HttpClientModule is imported from the '@angular/common/http' module.
+// This module provides the necessary dependencies for making HTTP requests in Angular applications.
+// The HttpClientModule should be imported in the root or feature module of the application to enable HTTP functionality.
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +14,11 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    // The HttpClientModule is added to the 'imports' array of an Angular module.
+    // By including HttpClientModule in the 'imports' array, the application gains access to the HttpClient service
+    // and other HTTP-related functionalities provided by Angular.
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
