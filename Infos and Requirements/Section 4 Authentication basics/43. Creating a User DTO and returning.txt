@@ -1,0 +1,11 @@
+Now, inside our token service, we have a configuration entry and we need to supply that in our configuration file so that this token key can be read from our configuration.
+Now, normally I would say this is a secret key. It should go in your appsettings.json, But for development we're going to have a development token key.
+
+
+Note : In the most recent security packages you need to use a much longer key than this and needs to be at least 64 characters.
+
+
+
+The URL "https://jwt.ms/" appears to be a shortened URL or domain. However, without more context or information, it is difficult to provide a specific answer regarding its purpose or content. It is worth noting that "JWT" typically stands for "JSON Web Token," which is a compact and self-contained means of transmitting information between parties as a JSON object. If "https://jwt.ms/" is a valid URL, it may be related to JWT and could potentially be a service or website dedicated to working with or analyzing JSON Web Tokens.
+
+

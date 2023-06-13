@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using API.Data;
 using API.DTOs;
 using API.Entities;
+using API.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -18,14 +19,16 @@ namespace API.Controllers
     {
 
         private readonly DataContext _context;
+        private readonly ITokenService _tokenService;
 
-        public AccountController(DataContext context)
+        public AccountController(DataContext context, ITokenService tokenService)
         {
+            _tokenService = tokenService;
             _context = context;
         }
 
         [HttpPost("register")] // POST : api/account/register
-        public async Task<ActionResult<AppUser>> Register(RegisterDto registerDto)
+        public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
         {
             // Check if the user is already registered
             if (await IsUserExistsAsync(registerDto.Username)) return BadRequest("Username is taken");
@@ -55,11 +58,14 @@ namespace API.Controllers
 
             await _context.SaveChangesAsync();
 
-            return user;
+            return new UserDto{
+                Username  = user.UserName,
+                Token = _tokenService.CreateToken(user)
+            };
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<AppUser>> Login(LoginDto loginDto)
+        public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
 
             // Retrieve the user record from the database based on the provided username.
@@ -83,7 +89,10 @@ namespace API.Controllers
             }
 
             // If the comparison succeeds, the login is considered successful, and the user object is returned.
-            return user;
+            return new UserDto{
+                Username  = user.UserName,
+                Token = _tokenService.CreateToken(user)
+            };
         }
 
 
