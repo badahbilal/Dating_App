@@ -1,0 +1,85 @@
+JWT TOKEN AUTHENTICATION
+JSON Web Tokens (JWT) 
+Industry Standard for tokens (RFC 7519) 
+Self-contained and can contain : 
+    •Credentials 
+    •Claims 
+    •Other information
+
+
+#==============================================================================================================================
+what is JWT TOKEN AUTHENTICATION
+
+JWT (JSON Web Token) authentication is a method of securely transmitting information between parties as a digitally signed token. It is commonly used for authentication and authorization in web applications and APIs.
+
+Here's a brief explanation of how JWT authentication works:
+
+1- User authentication: When a user logs in to a system, their credentials are verified. Once the user's identity is confirmed, a JWT is generated.
+
+2- Token generation: The JWT consists of three parts: a header, a payload, and a signature. The header typically specifies the token's algorithm and token type. The payload contains information about the user, such as their unique identifier and any relevant claims or permissions.
+
+3- Token signing: To ensure the integrity of the token, the header and payload are combined, and a secret key known only to the server is used to generate a signature. This signature is appended to the token.
+
+4- Token issuance: The server sends the JWT back to the client as a response to a successful login request. The client typically stores the token, often in local storage or cookies, for subsequent requests.
+
+5- Token verification: When the client makes a request to a protected resource or API endpoint, it includes the JWT in the request headers. The server receives the JWT and verifies its authenticity by recalculating the signature using the secret key. If the signature matches and the token is not expired, the server considers the request valid and proceeds with the associated operation.
+
+6- Authorization: Upon successful verification, the server can extract information from the JWT payload to determine the user's permissions and grant access to specific resources or functionalities accordingly.
+
+JWT authentication offers several advantages, including statelessness (as the server does not need to store session data), scalability, and ease of integration across different platforms. However, it is important to handle JWTs securely, protect the secret key, and consider token expiration and revocation to ensure the overall security of the system.
+#==============================================================================================================================
+
+
+JWT Structure
+
+A JWT (JSON Web Token) consists of three parts separated by dots (.): the header, the payload, and the signature. The structure of a JWT looks like this:
+
+<header>.<payload>.<signature>
+
+Let's examine each part in more detail:
+
+Header: The header typically consists of two components: the token type (typ) and the signing algorithm (alg) used to create the signature. For example:
+
+json
+Copy code
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+The above header specifies that the JWT is of type "JWT" and is signed using the HMAC-SHA256 algorithm.
+
+Payload: The payload contains the actual claims or data of the token. Claims are statements about the user or additional metadata. There are three types of claims:
+
+Registered claims: These are predefined claims that are recommended but not mandatory. Examples include iss (issuer), sub (subject), exp (expiration time), and iat (issued at time).
+Public claims: These are custom claims created by the developers. They should be defined in the IANA JSON Web Token Registry or be defined as URI (Uniform Resource Identifier) to avoid collisions.
+Private claims: These are custom claims specific to the application or organization using the JWT. They are typically shared between parties that agree on their usage.
+The payload is a JSON object that might look like this:
+
+json
+Copy code
+{
+  "sub": "1234567890",
+  "name": "John Doe",
+  "admin": true
+}
+It contains a subject (sub) claim with the value "1234567890", a name claim with the value "John Doe", and an admin claim set to true.
+
+Signature: The signature is created by taking the encoded header, the encoded payload, and a secret key known only to the server, and applying the specified signing algorithm. The purpose of the signature is to verify the integrity of the token and ensure that it has not been tampered with.
+
+The signature is created as follows: HMACSHA256(base64UrlEncode(header) + "." + base64UrlEncode(payload), secretKey). The resulting signature is then appended to the token.
+
+The JWT is typically base64Url encoded, which is a variation of base64 encoding that uses URL-safe characters. This makes the JWT compact and easy to transmit over different network protocols.
+
+When a client sends a JWT to a server, the server can validate the signature by re-computing it using the secret key it possesses. If the signature matches, the server can trust the information contained in the payload and process the request accordingly.
+
+It's important to note that JWTs are not encrypted, so sensitive information should not be stored in the payload. If confidentiality is required, it's recommended to use JWE (JSON Web Encryption) in conjunction with JWT.
+
+
+#==============================================================================================================================
+
+
+Benefits of JWT 
+- No session to manage - JWTS are self contained tokens 
+- Portable - A single token can be used with multiple backends 
+- No Cookies required - mobile friendly 
+- Performance - Once a token is issued, there is no need to make a database request to verify a users authentication    
