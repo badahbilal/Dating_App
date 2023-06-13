@@ -1,4 +1,6 @@
 using API.Data;
+using API.Interfaces;
+using API.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,6 +25,11 @@ builder.Services.AddDbContext<DataContext>(options => {
 // all origins, all methods, and all headers. This is suitable for development purposes, but it is recommended
 // to configure CORS with more specific rules in production environments.
 builder.Services.AddCors();
+
+// Register the TokenService implementation as a scoped service for the ITokenService interface.
+// The TokenService is responsible for generating and managing authentication tokens.
+builder.Services.AddScoped<ITokenService, TokenService>();
+
 
 
 /*

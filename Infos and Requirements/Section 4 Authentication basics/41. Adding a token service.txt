@@ -1,0 +1,29 @@
+What is the difference between AddScoped, AddTransient, and AddSingleton in ASP.NET Core Web API
+
+In ASP.NET Core Web API, there are three commonly used methods to register services in the dependency injection (DI) container: AddScoped, AddTransient, and AddSingleton. These methods control the lifetime and behavior of the registered services. Here's a breakdown of the differences:
+
+- AddScoped: This method registers a service with scoped lifetime. A new instance of the service is created for each scope (typically, for each HTTP request). In other words, within the same scope, the same instance is shared by all components that depend on it. Different scopes have different instances. This is suitable for services that hold state specific to a particular scope, such as per-request data.
+
+- AddTransient: This method registers a service with transient lifetime. A new instance of the service is created every time it is requested. Transient services are not shared, and each component that depends on the service gets a new instance. Transient services are lightweight and stateless, making them suitable for simple and stateless operations.
+
+- AddSingleton: This method registers a service with singleton lifetime. Only one instance of the service is created for the entire application and reused whenever it is requested. Singleton services are shared across all components and requests. This is useful for services that maintain a shared state or hold expensive resources, as it ensures that the same instance is used throughout the application.
+
+It's important to choose the appropriate registration method based on your service's requirements. If your service holds state specific to a scope, use AddScoped. If it's stateless and lightweight, use AddTransient. If you need a shared instance across the application or want to reuse expensive resources, use AddSingleton.
+
+#================================================================================================================
+
+The advantage of using an interface when it comes to testing code inside a dependency injection service is that it facilitates easier testing and promotes testability
+
+The advantage of using an interface when it comes to testing code within dependency injection services is that it allows for easier mocking and substitution of dependencies during unit testing.
+
+Here are a few key advantages:
+
+Dependency Inversion Principle: By programming to an interface rather than a concrete implementation, you adhere to the Dependency Inversion Principle. This principle states that high-level modules/classes should not depend on low-level modules/classes directly, but both should depend on abstractions (interfaces). This promotes loose coupling and makes it easier to replace dependencies with mock implementations during testing.
+
+Mocking Dependencies: In unit testing, it's often necessary to isolate the behavior of a specific component and test it in isolation from its dependencies. By having interfaces for dependencies, you can create mock implementations that mimic the behavior of the real dependencies. This allows you to control the behavior of the dependencies and focus solely on testing the component under test.
+
+Testability and Isolation: Interfaces provide a clear contract between components, making it easier to isolate and test individual components in isolation. You can create test cases where the real dependencies are replaced with mock implementations, enabling you to simulate different scenarios and verify the behavior of the component under test without external dependencies.
+
+Code Flexibility: Using interfaces allows for easier extensibility and swapping of implementations. You can easily replace one implementation with another by providing a different concrete implementation of the interface. This flexibility is valuable when you need to introduce new features, switch to alternative implementations, or adapt to changing requirements without modifying the existing codebase extensively.
+
+Overall, using interfaces in dependency injection promotes testability, flexibility, and maintainability in your codebase, enabling easier unit testing and providing the ability to swap dependencies when needed.
