@@ -28,7 +28,7 @@ namespace API.Controllers
         public async Task<ActionResult<AppUser>> Register(RegisterDto registerDto)
         {
             // Check if the user is already registered
-            if(await IsUserExistsAsync(registerDto.Username)) return BadRequest("Username is taken");
+            if (await IsUserExistsAsync(registerDto.Username)) return BadRequest("Username is taken");
 
 
             // Create a new user with the provided username and password.
@@ -58,8 +58,37 @@ namespace API.Controllers
             return user;
         }
 
+        [HttpPost("login")]
+        public async Task<ActionResult<AppUser>> Login(LoginDto loginDto)
+        {
 
-        private async Task<bool> IsUserExistsAsync(string username){
+            // Retrieve the user record from the database based on the provided username.
+            // If no user is found, return an "Unauthorized" response with the message "Invalid username".
+            var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == loginDto.UserName);
+
+            if (user == null) return Unauthorized("Invalid username");
+
+            // Create a new instance of the HMACSHA512 class using the user's stored password salt.
+            // The password salt is used to recompute the hash for the entered password.
+            using var hmac = new HMACSHA512(user.PasswordSalt);
+
+            // Compute the hash of the entered password using the HMACSHA512 algorithm.
+            var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDto.Password));
+
+            // Compare each byte of the computed hash with the corresponding byte of the stored password hash.
+            // If any byte differs, return an "Unauthorized" response with the message "Invalid password".
+            for (int i = 0; i < computedHash.Length; i++)
+            {
+                if (computedHash[i] != user.PasswordHash[i]) return Unauthorized("Invalid password");
+            }
+
+            // If the comparison succeeds, the login is considered successful, and the user object is returned.
+            return user;
+        }
+
+
+        private async Task<bool> IsUserExistsAsync(string username)
+        {
 
             return await _context.Users.AnyAsync(u => u.UserName == username.ToLower());
         }
