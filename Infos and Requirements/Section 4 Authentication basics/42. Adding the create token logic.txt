@@ -1,0 +1,2 @@
+Install this packge from the Nuget Gallery 
+"System.IdentityModel.Tokens.Jwt"
