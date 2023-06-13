@@ -1,0 +1,28 @@
+[ApiController] attributes It's got a couple of powers. One of them is its ability to automatically bind to our parameters inside our method. And we've seen that happen.
+We didn't need to do anything special to make that happen In the past, before the API controller attribute was available, then we'd need to tell the framework where to look for the thing that we're passing up to our controller. 
+And the way that we would do that is to add an attribute and we'd say [frombody] and then our controller would need to look inside the body of the request to find out what it is we're passing up to it, but we don't need to do that with the API controller attribute.
+
+Another thing the API controller attribute gives us is it's automatically going to check validation before we even get to our API controller.
+
+
+The [ApiController] attribute in ASP.NET Core API controllers provides several conveniences and automatic behaviors to simplify the development of APIs. Here are some key features and functionalities it offers:
+
+Automatic model validation: By default, the [ApiController] attribute enables automatic model validation. It automatically validates incoming request payloads based on the data annotations and model validation rules defined in your model classes. If the model is not valid, the API automatically returns a 400 Bad Request response.
+
+Automatic HTTP 400 responses: The [ApiController] attribute automatically handles invalid model states and returns a 400 Bad Request response with detailed error messages. This eliminates the need for manual validation checks and error response generation.
+
+Simplified parameter binding: It simplifies the parameter binding process by supporting various sources of input, such as query string parameters, route values, request headers, and request bodies. The framework automatically maps the incoming request data to the corresponding action method parameters based on their names and types.
+
+Automatic HTTP 404 responses: When a request is made to an action method that doesn't exist in the controller, the [ApiController] attribute automatically returns a 404 Not Found response.
+
+Automatic HTTP 500 responses: The attribute also handles unhandled exceptions thrown during request processing. It automatically catches these exceptions, logs them, and returns a 500 Internal Server Error response to the client.
+
+Problem Details support: The [ApiController] attribute integrates with the Problem Details middleware, allowing consistent error responses based on the RFC 7807 standard. It automatically converts exceptions into Problem Details responses, providing detailed error information in a standardized format.
+
+Attribute routing: The [ApiController] attribute enables attribute routing by default, allowing you to define routes directly on the action methods using attributes like [HttpGet], [HttpPost], etc. This simplifies the routing configuration within your application.
+
+By applying the [ApiController] attribute to your controller, you can leverage these features to streamline the development of your ASP.NET Core API, reduce boilerplate code, and enhance the consistency of your API responses.
+ 
+
+
+
