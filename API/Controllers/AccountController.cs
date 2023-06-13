@@ -6,8 +6,10 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using API.Data;
+using API.DTOs;
 using API.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace API.Controllers
@@ -23,8 +25,11 @@ namespace API.Controllers
         }
 
         [HttpPost("register")] // POST : api/account/register
-        public async Task<ActionResult<AppUser>> Register(string username, string password)
+        public async Task<ActionResult<AppUser>> Register(RegisterDto registerDto)
         {
+            // Check if the user is already registered
+            if(await IsUserExistsAsync(registerDto.Username)) return BadRequest("Username is taken");
+
 
             // Create a new user with the provided username and password.
             // The password is hashed using the HMACSHA512 algorithm and stored in the PasswordHash property.
@@ -41,9 +46,8 @@ namespace API.Controllers
 
             var user = new AppUser
             {
-
-                UserName = username,
-                PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password)),
+                UserName = registerDto.Username.ToLower(),
+                PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
                 PasswordSalt = hmac.Key
             };
 
@@ -52,6 +56,12 @@ namespace API.Controllers
             await _context.SaveChangesAsync();
 
             return user;
+        }
+
+
+        private async Task<bool> IsUserExistsAsync(string username){
+
+            return await _context.Users.AnyAsync(u => u.UserName == username.ToLower());
         }
 
     }
