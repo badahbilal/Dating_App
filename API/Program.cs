@@ -1,7 +1,10 @@
+using System.Text;
 using API.Data;
 using API.Interfaces;
 using API.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +14,8 @@ builder.Services.AddControllers();
 
 // This block of code registers the DataContext class as a service in the dependency injection container, using the AddDbContext method.
 // The AddDbContext method configures the DataContext to use SQLite as the database provider, using the connection string retrieved from the application configuration.
-builder.Services.AddDbContext<DataContext>(options => {
+builder.Services.AddDbContext<DataContext>(options =>
+{
     options.UseSqlite(builder.Configuration.GetConnectionString("SqliteDatingAppConnection"));
 });
 
@@ -30,6 +34,25 @@ builder.Services.AddCors();
 // The TokenService is responsible for generating and managing authentication tokens.
 builder.Services.AddScoped<ITokenService, TokenService>();
 
+
+// Configure JWT authentication scheme with the provided options.
+// The authentication scheme is set to JwtBearerDefaults.AuthenticationScheme,
+// indicating that JWT bearer token authentication will be used.
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        // Configure the token validation parameters for JWT authentication.
+        // Set the issuer signing key, enable issuer and audience validation,
+        // and disable issuer and audience validation.
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["TokenKey"])),
+            ValidateIssuer = false,
+            ValidateAudience = false,
+        };
+    });
 
 
 /*
@@ -59,6 +82,16 @@ And then the next part of this below this comment is what's referred to as the H
 // ensure appropriate security and access control.
 
 app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200"));
+
+
+// Enable authentication middleware to authenticate requests based on configured authentication schemes.
+// This middleware validates the incoming requests for authentication information, such as JWT tokens.
+app.UseAuthentication();
+
+
+// Enable authorization middleware to perform authorization checks on authenticated requests.
+// This middleware verifies whether the authenticated user has the necessary permissions to access the requested resource.
+app.UseAuthorization();
 
 
 app.MapControllers();

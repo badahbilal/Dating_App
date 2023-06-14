@@ -1,0 +1,25 @@
+Middleware :
+In ASP.NET Core Web API, middleware is a component that sits between the web server and the application's request handling pipeline. It processes HTTP requests and generates HTTP responses. Middleware allows you to add custom logic and behavior to handle tasks such as authentication, authorization, logging, error handling, and request/response transformations. You can chain multiple middleware components together to create a pipeline. Each middleware can choose to pass the request to the next middleware or return a response immediately. Middleware is added to the pipeline using the UseMiddleware method in the Configure method of the Startup class.
+
+
+
+########################################################################################################
+The [Authorize] attribute in ASP.NET Core Web API is used to restrict access to certain resources, such as controller classes or action methods, based on authentication. It ensures that only authenticated users can access those resources, and unauthenticated users will receive a 401 Unauthorized response. Additional parameters like roles or policies can be used to further restrict access to specific users or user groups.
+
+
+The [AllowAnonymous] attribute in ASP.NET Core Web API allows unrestricted access to specific resources, such as controller classes or action methods, without requiring authentication. It overrides any higher-level authorization requirements and allows both authenticated and unauthenticated users to access the marked resources.
+
+
+########################################################################################################
+"Worning"
+[AllowAnonymous] bypasses all authorization statements. If you combine [AllowAnonymous] and any [Authorize] attribute, the [Authorize] attributes are ignored. For example if you apply [AllowAnonymous] at the controller level, any [Authorize] attributes on the same controller (or on any action within it) are ignored.
+
+
+
+install this packege from NugetGallery
+Microsoft.AspNetCore.Authentication.JwtBearer 
+
+########################################################################################################
+
+to send a request to the server with the token inside postman
+go to the header and add new key "authorization" and value is "Bearer +Token"
