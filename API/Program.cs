@@ -1,5 +1,6 @@
 using System.Text;
 using API.Data;
+using API.Extensions;
 using API.Interfaces;
 using API.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -11,48 +12,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-
-// This block of code registers the DataContext class as a service in the dependency injection container, using the AddDbContext method.
-// The AddDbContext method configures the DataContext to use SQLite as the database provider, using the connection string retrieved from the application configuration.
-builder.Services.AddDbContext<DataContext>(options =>
-{
-    options.UseSqlite(builder.Configuration.GetConnectionString("SqliteDatingAppConnection"));
-});
-
-
-// This code adds Cross-Origin Resource Sharing (CORS) support to the ASP.NET Core application.
-// The AddCors() method is called on the IServiceCollection to configure CORS settings.
-// CORS allows controlled access to resources on a different domain, which is typically restricted by browsers
-// due to the same-origin policy. By enabling CORS, the server can specify which origins are allowed to access
-// its resources and which HTTP methods and headers are permitted.
-// By calling AddCors() without any additional configuration, the default CORS policy is applied, which allows
-// all origins, all methods, and all headers. This is suitable for development purposes, but it is recommended
-// to configure CORS with more specific rules in production environments.
-builder.Services.AddCors();
-
-// Register the TokenService implementation as a scoped service for the ITokenService interface.
-// The TokenService is responsible for generating and managing authentication tokens.
-builder.Services.AddScoped<ITokenService, TokenService>();
-
-
-// Configure JWT authentication scheme with the provided options.
-// The authentication scheme is set to JwtBearerDefaults.AuthenticationScheme,
-// indicating that JWT bearer token authentication will be used.
-
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
-    {
-        // Configure the token validation parameters for JWT authentication.
-        // Set the issuer signing key, enable issuer and audience validation,
-        // and disable issuer and audience validation.
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["TokenKey"])),
-            ValidateIssuer = false,
-            ValidateAudience = false,
-        };
-    });
+// Here we call the Extension Method of Application Services
+builder.Services.AddApplicationServices(builder.Configuration);
+// Here we call the Extension Method of Identity Services
+builder.Services.AddIdentityServices(builder.Configuration);
 
 
 /*
@@ -65,7 +28,6 @@ var app = builder.Build();
 /*
 And then the next part of this below this comment is what's referred to as the HTTP request pipeline.
 */
-
 // Configure the HTTP request pipeline.
 
 
@@ -80,7 +42,6 @@ And then the next part of this below this comment is what's referred to as the H
 // allowing the application to receive requests from a different domain during development.
 // It is important to configure CORS policies carefully in production environments to
 // ensure appropriate security and access control.
-
 app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200"));
 
 

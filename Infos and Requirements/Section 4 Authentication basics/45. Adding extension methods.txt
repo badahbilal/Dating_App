@@ -1,0 +1,3 @@
+
+Extension methods in C#:
+Extension methods in C# allow you to add new methods to existing types without modifying the original type. They are static methods defined in static classes, with the this modifier before the first parameter to indicate the type being extended. Once defined, you can use extension methods as if they were instance methods of the extended type. Extension methods are resolved at compile-time and provide a way to extend functionality without modifying or inheriting from the original type. They are commonly used to add utility methods or additional functionality to existing types in .NET applications.
