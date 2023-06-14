@@ -1,0 +1,11 @@
+LEARNING GOALS 
+Implement basic authentication in our app and have an understanding of : 
+1. How to store passwords in the Database 
+2. Using inheritance in C# - DRY 
+3. Using the C# debugger 
+4. Using Data Transfer Objects (DTOs) 
+5. Validation 
+6. JSON Web Tokens (JWTS) 
+7. Using services in C# 
+8. Middleware 
+9. Extension methods - DRY 
