@@ -1,0 +1,28 @@
+
+
+# Display help information for Angular CLI generate command.
+# This command lists available generators and their options.
+ng g --help
+
+# Generate a service file for the '_services' directory.
+# The '--skip-tests' option skips generating test files.
+# The '--dry-run' option performs a dry run, showing the files that would be created without actually creating them.
+ng g s _services/account --skip-tests --dry-run
+
+
+what is angular service
+Angular Services are an essential part of the Angular framework that enable the sharing and organization of code and data across different components and modules within an application. They encapsulate common tasks, business logic, and data manipulation, promoting code reusability and separation of concerns. Services can be injected into components and other services using dependency injection, allowing for easy access to their methods and data. By utilizing services, developers can build scalable, modular, and maintainable Angular applications with centralized functionality and data management.
+
+
+
+from video :
+For the time being, a couple of things I just want you to remember from this service is our injectable, and we can see that via the injectable decorator so we can inject this service into our components. So this is a singletons, which means they're instantiated when our application starts and destroyed when our application shuts down.
+And the different two components because of that and components, as we move from different components, a different component, then components are destroyed along with any state that is stored inside that component. Where's a service is always available for the lifetime of the application, so it makes it a good place to store any kind of state that we want our application to remember.
+ 
+
+
+
+
+ 
+ 
+
