@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class NavComponent {
 
+  model : any = {};
+
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  login(){
+    console.log(this.model);
+  }
 }
