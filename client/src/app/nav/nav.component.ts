@@ -28,13 +28,17 @@ export class NavComponent {
         console.log(response);
         this.loggedIn = true;
       },
-      
+
       error: error => {
         // Handle any errors that occur during the login process.
         // In this case, the error is logged to the console.
         console.log(error);
       }
     });
+  }
+
+  logout() {
+    this.loggedIn = false;
   }
   
 }
