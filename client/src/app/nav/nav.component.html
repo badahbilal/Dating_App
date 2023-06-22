@@ -17,9 +17,9 @@
           </li>
         </ul>
 
-        <div class="dropdown" *ngIf="loggedIn">
-          <a href="" class="dropdown-toggele text-light">Welcome user</a>
-          <div class="dropdown-menu">
+        <div class="dropdown" *ngIf="loggedIn" dropdown>
+          <a class="dropdown-toggle text-light text-decoration-none" dropdownToggle>Welcome user</a>
+          <div class="dropdown-menu" *dropdownMenu>
             <a href="" class="dropdown-item">Edit Profile</a>
             <a href="" class="dropdown-item" (click)="logout()">Logout</a>
           </div>

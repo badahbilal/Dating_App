@@ -1,0 +1,5 @@
+In this video we saw how to add toggle to functionalité to the nav bar using this site :
+
+https://valor-software.com/ngx-bootstrap/#/components/dropdowns?tab=overview
+https://valor-software.com/ngx-bootstrap/#/components/dropdowns?tab=api
+https://valor-software.com/ngx-bootstrap/#/components/dropdowns?tab=overview#basic
