@@ -1,0 +1,35 @@
+What are Observables?
+New standard for managing async data included included in ES7 (ES2016).
+Introduced in Angular v2
+Observables are lazy collections of multiple values over time
+You can think of observables like a newsletter
+    ° Only subscribers of the newsletter receive the newsletter
+    ° If no-one subscribes to the newsletter it probably will not be printed
+
+In Angular, Observables are a crucial part of the RxJS library used for reactive programming. They represent streams of data that can change over time and are used for managing asynchronous tasks like handling HTTP requests, user input, and data updates. Instead of traditional callbacks or promises, developers leverage Observables to subscribe to these data streams, providing callback functions to handle emitted data, errors, and completion. This declarative approach allows for more efficient and maintainable code, as Observables provide powerful tools to handle asynchronous operations and data flow in modern Angular applications.
+
+
+Promises vs Observables
+
+==> Promise
+    Provides a single future value
+    Not lazy
+    Can not cancel
+
+==> Observable
+    Emits multiple values over time
+    LazY
+    Able to cancel
+    Can use with map, filter, reduce and
+    other operators
+
+
+
+Getting data from observables ?
+Getting data from Observables in Angular involves subscribing to the observable to start receiving data emitted by it. Once subscribed, you provide an observer with callback functions to handle the data, errors, and completion. This subscription establishes a connection to the observable's data stream, and whenever new data is emitted, the corresponding callback function is invoked with the emitted data. The observer's next() function handles the emitted data, error() handles any errors that might occur during data processing, and complete() is called when the observable stream is completed or terminated. Angular's HttpClient service, for instance, returns Observables when making HTTP requests, and developers typically subscribe to these Observables to retrieve the response data and handle any potential errors. By subscribing to Observables, Angular applications can effectively manage asynchronous data flow and perform reactive operations based on the data emitted over time. However, it's crucial to properly manage subscriptions to avoid memory leaks and unnecessary data processing.
+
+
+Async Pipe
+<li *ngFor='let member of service.getMembers () | async'> {{member.username}} </>
+Automatically subscribes unsubscribes from the Observable
+
