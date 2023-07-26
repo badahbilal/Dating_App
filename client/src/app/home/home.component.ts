@@ -10,27 +10,35 @@ import { Component } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   registerMode = false;
-  users : any;
+  users: any;
 
-  constructor( private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.getUsers();
   }
 
-  registerToggle(){
+  registerToggle() {
     this.registerMode = !this.registerMode;
   }
 
 
-  getUsers(){
+  getUsers() {
     this.http.get('https://localhost:7267/api/users').subscribe({
-      next : response => this.users = response,
-      error : error => console.log(error),
-      complete : () =>  console.log('Request has completed'),
+      next: response => this.users = response,
+      error: error => console.log(error),
+      complete: () => console.log('Request has completed'),
     });
   }
 
+  // The 'cancelRegisterMode' function is called when the child component emits the 'cancelRegister' event.
+  // The function takes a boolean 'event' parameter, which represents the event data sent from the child component.
+  cancelRegisterMode(event: boolean) {
+    
+    // Update the 'registerMode' property of the parent component (HomeComponent) based on the 'event'.
+    // The 'registerMode' property is typically used to control the visibility of the registration form.
+    this.registerMode = event;
+  }
 
 
 }
