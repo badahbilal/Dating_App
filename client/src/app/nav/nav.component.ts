@@ -3,6 +3,7 @@ import { AccountService } from '../_services/account.service';
 import { Observable, of } from 'rxjs';
 import { User } from '../_models/user';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-nav',
@@ -15,7 +16,7 @@ export class NavComponent {
 
 
 
-  constructor(public accountService: AccountService, private router: Router) { }
+  constructor(public accountService: AccountService, private router: Router, private toastr : ToastrService) { }
 
   ngOnInit(): void {
 
@@ -43,6 +44,8 @@ export class NavComponent {
 
       error: error => {
         console.log(error);
+        this.toastr.error(error.error);
+
       }
     });
 
