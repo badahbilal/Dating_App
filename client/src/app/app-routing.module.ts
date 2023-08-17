@@ -5,6 +5,7 @@ import { MemberListComponent } from './members/member-list/member-list.component
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
+import { authGuard } from './_guards/auth.guard';
 
 // Define an array of route configurations for navigation in the Angular application.
 const routes: Routes = [
@@ -12,7 +13,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
 
   // Route for the "members" path maps to the MemberListComponent.
-  { path: 'members', component: MemberListComponent },
+  { path: 'members', component: MemberListComponent , canActivate: [authGuard]},
 
   // Route for the "members/:id" path maps to the MemberDetailComponent.
   { path: 'members/:id', component: MemberDetailComponent },
