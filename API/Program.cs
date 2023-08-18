@@ -2,6 +2,7 @@ using System.Text;
 using API.Data;
 using API.Extensions;
 using API.Interfaces;
+using API.Middleware;
 using API.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -29,6 +30,10 @@ var app = builder.Build();
 And then the next part of this below this comment is what's referred to as the HTTP request pipeline.
 */
 // Configure the HTTP request pipeline.
+
+
+// Add the custom 'ExceptionMiddleware' to the request processing pipeline.
+app.UseMiddleware<ExceptionMiddleware>();
 
 
 // This code configures CORS middleware in the ASP.NET Core application pipeline.
