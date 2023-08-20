@@ -6,6 +6,7 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { authGuard } from './_guards/auth.guard';
+import { TestErrorComponent } from './errors/test-error/test-error.component';
 
 // Define an array of route configurations for navigation in the Angular application.
 const routes: Routes = [
@@ -37,6 +38,7 @@ const routes: Routes = [
     { path: 'messages', component: MessagesComponent },
   ]
 },
+  { path : "errors" , component : TestErrorComponent},
   // Route for any other unspecified path maps to the HomeComponent.
   // This acts as a catch-all route for unknown paths.
   { path: '**', component: HomeComponent }
