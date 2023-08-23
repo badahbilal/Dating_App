@@ -1,0 +1,21 @@
+In this lesson, the instructor covers how to handle validation errors in an Angular application. The key points of the lesson include:
+
+When dealing with validation errors, it's common to receive multiple arrays of errors from the server.
+
+To make it easier to work with these errors, the instructor demonstrates flattening the arrays into a single array using the flat method.
+
+In the Angular component (test-error.component.ts), a property called validationErrors is added to store the validation error messages.
+
+When testing the "Test 400 Validation Error" button, the validation errors received from the server are assigned to the validationErrors property.
+
+In the component's template (test-error.component.html), an ngIf directive is used to check if there are any validation errors to display.
+
+If validation errors are present, they are displayed as a list of error messages using an ngFor directive.
+
+The lesson emphasizes that this approach allows for better user feedback when dealing with form submissions and server-side validation.
+
+The instructor mentions that this technique can be applied when certain validation checks cannot be performed on the client side and need to be handled on the server.
+
+The next topic to be covered in the course is handling the "401 Unauthorized" error.
+
+Overall, the lesson focuses on improving the user experience by displaying validation errors clearly in the Angular application, making it easier for users to understand what went wrong with their input.
