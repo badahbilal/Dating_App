@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 // The HttpClientModule is imported from the '@angular/common/http' module.
 // This module provides the necessary dependencies for making HTTP requests in Angular applications.
 // The HttpClientModule should be imported in the root or feature module of the application to enable HTTP functionality.
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +18,7 @@ import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { SharedModule } from './_modules/shared.module';
 import { TestErrorComponent } from './errors/test-error/test-error.component';
+import { ErrorInterceptor } from './_interceptors/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,9 @@ import { TestErrorComponent } from './errors/test-error/test-error.component';
     FormsModule,
     SharedModule
   ],
-  providers: [],
+  providers: [
+    {provide : HTTP_INTERCEPTORS, useClass : ErrorInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

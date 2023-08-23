@@ -1,0 +1,35 @@
+In this lesson, the instructor demonstrates how to create an HTTP interceptor in Angular to handle various types of HTTP errors that may occur when making requests to an API. The interceptor is designed to intercept HTTP requests and responses and handle errors based on their status codes.
+
+Here's a breakdown of what the instructor does:
+
+Generates an HTTP interceptor using the Angular CLI with the command ng generate interceptor interceptors/error and configures it to be placed in the interceptors folder.
+
+Inside the generated interceptor file, the instructor injects the Angular Router and a Toaster service, which is likely used for displaying toast notifications.
+
+Defines the intercept method required by the HTTPInterceptor interface. This method takes an HTTP request and a next object representing the next handler in the chain.
+
+Within the intercept method, the instructor sets up error handling logic using the pipe and catchError operators from RxJS.
+
+The code checks the status code of the HTTP error response and handles different cases:
+
+For a 400 Bad Request error:
+
+If it's a validation error (based on the structure of the error response), it formats the errors into an array and throws them.
+Otherwise, it displays a toast message indicating that it was a bad request.
+For a 401 Unauthorized error, it displays a toast message indicating unauthorized access.
+
+For a 404 Not Found error, it redirects to a "not found" page (which should be created separately).
+
+For a 500 Internal Server Error error, it redirects to a "server error" page (which should be created separately).
+
+For other unhandled errors, it displays a generic toast message and logs the error to the console.
+
+The instructor also includes break statements within each case to prevent fall-through in the switch statement.
+
+Finally, the instructor throws the error again at the end of the intercept method to ensure that other interceptors and the component itself can still access the error.
+
+In the app.module.ts file, the interceptor is registered in the providers array using the HTTP_INTERCEPTORS token.
+
+The client application is then tested to verify that the interceptor works as expected.
+
+The interceptor provides centralized error handling for HTTP requests and can be customized to suit the specific needs of the application. It handles different types of errors and allows for consistent handling and presentation of error messages to the user.
