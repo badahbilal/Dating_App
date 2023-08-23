@@ -44,8 +44,7 @@ export class NavComponent {
 
       error: error => {
         console.log(error);
-        this.toastr.error(error.error);
-
+        //this.toastr.error(error.error);
       }
     });
 

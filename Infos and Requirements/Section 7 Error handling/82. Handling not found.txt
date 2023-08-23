@@ -1,0 +1,17 @@
+In this part of the tutorial, the instructor covers the creation of two components: "not-found" and "server-error" components. Here's a summary:
+
+The instructor uses the Angular CLI to generate two components, "not-found" and "server-error," both located in the "errors" folder.
+
+Inside the "not-found" component's HTML template (not-found.component.html), a basic layout is created. It includes a container with an <h1> element displaying "Not Found" and a button to return to the home page.
+
+In the "app-routing.module.ts" file, routes are added for the "not-found" and "server-error" components, along with a wildcard route to handle any other undefined routes, all redirecting to the respective components.
+
+The instructor removes the error handling logic from the "nav-bar" component, as the error handling is now centralized in the interceptor.
+
+The "nav-bar" component's error handling logic is no longer needed since errors are being handled at the interceptor level. This cleanup improves the code organization.
+
+The instructor emphasizes that for certain errors, like "401 Unauthorized" errors during login attempts, it's better to provide minimal information to the user to enhance security.
+
+The error handling for the "register" component is temporarily left as is, with the intention of revisiting it later for further adjustments.
+
+Overall, this part of the tutorial focuses on creating components for handling specific error scenarios and updating the routing configuration to direct users to the appropriate error components. The interceptor now manages error handling for the entire application, providing a more organized and centralized approach.
