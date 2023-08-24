@@ -1,0 +1,15 @@
+In this part of Section 8, you've extended your data model to include a relationship between users and photos. Here's a summary of what you've done:
+
+You decided not to create a separate DbSet for photos because you don't need direct access to photos, and each photo is associated with a user. Instead, you'll define the relationship between users and photos through navigation properties.
+
+You used the Table attribute to specify that the table for photos should be named "photos" in your database. This allows you to pluralize the table name to match your preference.
+
+You generated a new migration using the dotnet ef migrations add command, and the migration includes the necessary changes to create the photos table with a foreign key relationship to users.
+
+You modified the Photo entity to include an AppUserId property and an AppUser navigation property, fully defining the relationship between photos and users.
+
+You modified the migration to specify that the AppUserId property cannot be nullable and configured the delete behavior to cascade, meaning that when a user is deleted, their associated photos will also be deleted.
+
+Finally, you applied the migration to update your database schema.
+
+Now, your database includes the photos table with the required relationships to users, and you can start working on seeding data into your database to have something to work with.
