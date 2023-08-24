@@ -1,0 +1,13 @@
+In this part of Section 8, you've created an extension method for calculating a user's age based on their date of birth. Here's a breakdown of the extension method:
+
+You've created a static class called DateTimeExtensions to hold your extension method.
+
+Inside this class, you've created a static method named CalculateAge that extends the DateOnly type. This method calculates a user's age based on their date of birth (DOB).
+
+You've used DateOnly to represent the current date using DateOnly today = DateOnly.FromDateTime(DateTime.UtcNow);.
+
+You calculate the age by subtracting the Year of the DOB from the Year of the current date. If the user hasn't had their birthday yet this year, you subtract an additional year.
+
+Finally, you return the calculated age as an int.
+
+You've also made preparations for working with Entity Framework relationships, particularly the one-to-many relationship between users and their photos. Understanding how to define and work with relationships is crucial for designing your database and accessing related data efficiently.
