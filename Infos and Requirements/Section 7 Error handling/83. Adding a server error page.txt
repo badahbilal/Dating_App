@@ -1,0 +1,21 @@
+In this final part of the section, the instructor focuses on handling server errors and providing helpful information for debugging. Here's a summary:
+
+The instructor acknowledges that the approach taken in this section, displaying detailed error information in the component template, is not suitable for production apps. However, it's a valuable learning exercise to help understand and debug issues during development.
+
+They open the "server-error" component and begin working on its template.
+
+To access error information from the navigation extras, they inject the Router into the component's constructor and retrieve the error object in the constructor itself using optional chaining.
+
+In the component's HTML template, they provide the following information for debugging purposes:
+
+Display "Internal Server Error" with a hint to refresh the page to make the error disappear.
+Use *ngIf to conditionally display the error message if it exists.
+Display a paragraph with instructions on what to do next, including checking the failing request in Chrome Dev Tools and reproducing the problem in Postman.
+Display the stack trace of the error in a formatted manner.
+The instructor notes that this detailed error information is meant for developers during development and debugging and should not be exposed to end-users in production.
+
+They demonstrate that refreshing the page will make the error disappear because the component relies on navigation extras, which are only available during redirection via the Http interceptor.
+
+Finally, the instructor commits and syncs the changes to GitHub, marking the end of Section 7 of the course.
+
+This section primarily focused on error handling and provided a comprehensive overview of handling different types of errors, including validation errors, not found errors, and server errors. It emphasized the importance of centralizing error handling logic using Angular interceptors and provided practical examples for handling and displaying error information to assist in debugging.
