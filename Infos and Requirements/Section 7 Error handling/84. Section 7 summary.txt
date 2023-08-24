@@ -1,0 +1,11 @@
+In Section 7, the focus was primarily on error handling within the Angular application and the API. Here's a summary of what was covered in this section:
+
+API Exception Handling: You implemented global error handling in the API using custom exception classes and middleware. This allowed you to handle and return specific exceptions to the client, providing better error messages during development while still maintaining security in production.
+
+Angular Interceptors: You explored Angular interceptors, which were used to intercept HTTP requests and responses. This enabled centralized error handling for HTTP requests in your Angular application. You set up interceptors to handle various types of errors, including validation errors, not found errors, and server errors.
+
+Troubleshooting Server Exceptions: You created a server error page in your Angular application to display detailed error information when a server error occurs. This page provides instructions for debugging, including checking the network request in Chrome Dev Tools and reproducing the problem in Postman.
+
+Final Thoughts: The section concluded by emphasizing the importance of troubleshooting and solving issues that arise during development. It encouraged learners to embrace problem-solving as an integral part of software development.
+
+With a solid foundation in error handling and architectural elements in place, the next steps in the course will involve building out various features in your application. This section provided you with the tools and knowledge needed to tackle those features effectively.
