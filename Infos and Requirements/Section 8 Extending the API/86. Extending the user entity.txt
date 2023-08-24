@@ -1,0 +1,20 @@
+In this part of Section 8, you're extending your API by adding more properties to the AppUser class to store additional user information. Here's a summary of the changes you're making:
+
+You've added several new properties to the AppUser class:
+
+DateOfBirth: Using the DateOnly type to store the user's date of birth.
+KnownAs: A string property to store an alternative username.
+Created: A DateTime property to track when the user's account was created.
+LastActive: Another DateTime property to track the user's last activity.
+Gender: A string property to store the user's gender.
+Introduction: A string property for the user's introduction.
+LookingFor: A string property to specify what the user is looking for.
+Interests: A string property to store the user's interests.
+City: A string property for the user's city.
+Country: A string property for the user's country.
+Photos: A list property to store user photos (with Photo as an entity class).
+You've created the Photo entity class to represent user photos. It contains properties for ID, URL, IsMain, and PublicID.
+
+You used a shorthand notation to initialize the Photos property in the AppUser class with an empty list of photos.
+
+These additions to your data model will allow you to store and retrieve more information about users in your application. Next, you're planning to create an extension method to calculate the user's age based on their date of birth, enhancing the data you can present to users.
