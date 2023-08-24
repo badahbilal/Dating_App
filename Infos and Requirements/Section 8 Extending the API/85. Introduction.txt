@@ -1,0 +1,13 @@
+In Section 8, you will extend your API's functionality and gain a deeper understanding of Entity Framework relationships. Here's what you can expect to learn and work on in this section:
+
+Database Relationships: You'll explore how to implement relationships between different tables in your database. This is an important concept as it allows you to model more complex data structures.
+
+Entity Framework Conventions: You'll learn about Entity Framework conventions and how they can be used to automatically define relationships and foreign keys in your database schema.
+
+Database Seeding: You'll discover how to populate your database with initial data. This is useful for testing and ensuring that your application has data to work with when it's first deployed.
+
+Repository Pattern: You'll dive into the repository pattern, which is a common architectural pattern used to abstract data access. It helps separate the data access logic from the rest of your application.
+
+Auto Mapper: You'll be introduced to AutoMapper, a library that simplifies the mapping of data between different objects. It's especially useful when you need to transform data from your database models to DTOs (Data Transfer Objects) for API responses.
+
+These topics will enhance your understanding of database relationships, data modeling, and best practices for structuring your API. By the end of this section, you'll have a more feature-rich API and a deeper knowledge of how to work with data in your application.
