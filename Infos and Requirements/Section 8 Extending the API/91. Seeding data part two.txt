@@ -1,0 +1,21 @@
+n this section, you performed the following tasks:
+
+Dropping the Existing Database:
+
+You used the dotnet ef database drop command to drop the existing database.
+Migrating and Seeding the Database:
+
+You restarted the application with dotnet watch and allowed it to create the database, apply migrations, and seed it with initial user data.
+You verified the database schema using SQL Server Explorer.
+Testing with Postman:
+
+You used Postman to test the application.
+You logged in as a user (in this case, "Lisa") and saved the generated token to the environment variables.
+You made an authenticated request to retrieve a list of users, confirming that the seeded user data was successfully retrieved.
+Environment Variables:
+
+You learned how to store and access environment variables in Postman, which can be useful for storing tokens or other data needed for testing.
+Upcoming Topics:
+
+You mentioned the upcoming topic of the repository pattern, which will be discussed in the next section. This pattern is essential for organizing and simplifying database access in your application.
+By completing these tasks, you ensured that your database was successfully created, populated with initial data, and that you could interact with it via API requests. The repository pattern will provide a structured approach to working with your database in future sections.

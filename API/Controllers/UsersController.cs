@@ -23,7 +23,7 @@ namespace API.Controllers
 
         // Apply the AllowAnonymous attribute to allow anonymous access to this action or controller.
         // Unauthenticated users will be permitted to access the decorated resource.
-        [AllowAnonymous]
+        //[AllowAnonymous]
         [HttpGet]
         public ActionResult<IEnumerable<AppUser>> GetUsers()
         {
