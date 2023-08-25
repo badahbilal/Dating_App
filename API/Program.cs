@@ -62,4 +62,28 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+
+// In the application startup, create a service scope and perform database migration and seeding if required.
+using var scope = app.Services.CreateScope();
+var services = scope.ServiceProvider;
+
+try
+{
+    // Get the database context from the service provider.
+    var context = services.GetRequiredService<DataContext>();
+
+    // Apply pending database migrations asynchronously.
+    await context.Database.MigrateAsync();
+
+    // Seed initial user data into the database if no users exist.
+    await Seed.SeedUsers(context);
+}
+catch (Exception ex)
+{
+    // If an exception occurs during migration or seeding, log the error.
+    var logger = services.GetService<ILogger<Program>>();
+    logger.LogError(ex, "An error occurred during migration");
+}
+
+
 app.Run();

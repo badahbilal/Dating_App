@@ -1,0 +1,34 @@
+In this section, you've learned how to create a C# class for seeding data into your database and how to apply this seed data when your application starts up. Here's a summary of the key points:
+
+Creating a Seed Data Class:
+
+You created a C# class named "Seed" inside your project's "Data" folder.
+Inside this class, you defined a static method named "SeedUsers" that will be responsible for seeding user data into the database.
+Checking for Existing Data:
+
+In the "SeedUsers" method, you first check if there are any existing users in the database. If there are, you exit the method to avoid reseeding data.
+Reading Seed Data from JSON:
+
+You read seed user data from a JSON file named "UserSeedData.json" using the System.IO.File.ReadAllTextAsync method.
+You deserialized this JSON data into a list of AppUser objects using JsonSerializer.Deserialize.
+Generating Password Hashes:
+
+For each user in the list, you generated password hashes and salts using the same technique as in the registration process.
+The generated password is complex to meet security requirements, although in a real-world scenario, users would set their own passwords.
+Adding Users to the Database:
+
+You added each user to the Entity Framework context using the context.Users.Add method.
+Saving Changes to the Database:
+
+After adding all users to the context, you saved the changes to the database using context.SaveChangesAsync().
+Migrating the Database:
+
+You applied any pending database migrations and ensured the database was created if it didn't already exist by using context.Database.MigrateAsync().
+Exception Handling:
+
+You implemented exception handling to log errors using a logger in case any issues occurred during migration or seeding.
+Running Seed Data at Application Startup:
+
+You placed the code for migrating and seeding the database in the Program.cs file, inside the Main method.
+This ensures that the migration and seeding process happens when the application starts.
+By implementing this seed data strategy, your application will automatically create and populate the database with initial user data each time it starts. This simplifies the development and testing process by providing consistent, readily available data for your application.
