@@ -1,0 +1,15 @@
+AutoMapper is a fantastic tool for simplifying the mapping process between different object types. By defining AutoMapper profiles, you can instruct AutoMapper on how to map properties between your domain entities (like AppUser and Photo) and your DTOs (like MemberDTO and PhotoDTO).
+
+Here's what you've done:
+
+Installed AutoMapper: You've added AutoMapper to your project using the NuGet package.
+
+Created AutoMapper Profiles: You've created an AutoMapper profile class (AutoMapperProfiles) that inherits from Profile. In this class, you specify how to map properties between your domain entities and DTOs.
+
+Configured AutoMapper: In the Startup.cs file, you've configured AutoMapper as a service and told it to scan the current assembly for profiles.
+
+Defined Mapping Rules: In your AutoMapperProfiles class, you've defined mapping rules for each pair of entities and DTOs you want to map. AutoMapper will use these rules to perform the property mapping automatically.
+
+By using AutoMapper, you avoid writing tedious and error-prone mapping code by hand. It greatly simplifies the process of converting domain entities to DTOs and vice versa, enhancing code readability and maintainability.
+
+Next, you'll see how to actually use AutoMapper within your controllers to perform these mappings when returning data to clients.

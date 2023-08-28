@@ -40,6 +40,9 @@ namespace API.Extensions
             // Register the 'IUserRepository' service with the 'UserRepository' implementation.
             services.AddScoped<IUserRepository, UserRepository>();
 
+            // Configure AutoMapper and register it with the application's services.
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 
             return services;
         }
