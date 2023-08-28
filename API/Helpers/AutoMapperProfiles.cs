@@ -8,12 +8,24 @@ using AutoMapper;
 
 namespace API.Helpers
 {
+    // AutoMapperProfiles class defines mapping profiles for AutoMapper.
+
     public class AutoMapperProfiles : Profile
     {
         public AutoMapperProfiles()
         {
-            CreateMap<AppUser,MemberDto>();
-            CreateMap<Photo,PhotoDto>();
+            // Configure mapping from AppUser to MemberDto.
+            CreateMap<AppUser, MemberDto>()
+                .ForMember(dest => dest.PhotoUrl,
+                    opt => opt.MapFrom(
+                        src => src.Photos.FirstOrDefault(
+                            x => x.IsMain
+                        ).Url
+                    ));
+
+            // Configure mapping from Photo to PhotoDto.
+            CreateMap<Photo, PhotoDto>();
         }
     }
+
 }

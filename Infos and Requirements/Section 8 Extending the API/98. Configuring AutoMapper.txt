@@ -1,0 +1,11 @@
+In this section, you've enhanced your DTO by adding a PhotoUrl property to the MemberDTO. This property will hold the URL of the user's main photo. You've also configured AutoMapper to populate this property correctly when mapping from the AppUser entity. Here's a summary of the key points:
+
+DTO Enhancement: You've modified the MemberDTO by adding a PhotoUrl property. This property is designed to store the URL of the user's main photo.
+
+AutoMapper Configuration: To instruct AutoMapper on how to populate the PhotoUrl property, you've created a configuration in the AutoMapperProfiles class. This configuration specifies that the PhotoUrl property should be mapped from the Photos collection of the AppUser, filtering for the photo with IsMain set to true.
+
+Testing: You've tested your application using Postman to ensure that the PhotoUrl property is correctly populated when requesting user data. The property is now populated with the URL of the main photo for each user.
+
+AutoMapper Optimization: You've mentioned that while AutoMapper is a convenient tool for mapping, some developers prefer to write their own mapping code for performance reasons. You've hinted at exploring alternative mapping techniques later in the course.
+
+Overall, you've successfully added and configured the PhotoUrl property in your DTO, enhancing your API's functionality and data presentation.
