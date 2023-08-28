@@ -34,24 +34,17 @@ namespace API.Controllers
         public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers()
         {
             // Retrieve a list of users from the repository asynchronously.
-            var users = await _userRepository.GetUsersAsync();
-
-            // Map the list of users to a list of 'MemberDto' objects using AutoMapper.
-            var usersToReturn = _mapper.Map<IEnumerable<MemberDto>>(users);
+            var users = await _userRepository.GetMembersAsync();
 
             // Return the list of 'MemberDto' objects as a successful response (HTTP 200 OK).
-            return Ok(usersToReturn);
+            return Ok(users);
         }
 
         // HTTP GET method to retrieve a specific user by username.
         [HttpGet("{username}")]
         public async Task<ActionResult<MemberDto>> GetUser(string username)
         {
-            // Retrieve a user by username from the repository asynchronously.
-            var user = await _userRepository.GetUserByUsernameAsync(username);
-
-            // Map the user object to a 'MemberDto' object using AutoMapper.
-            return _mapper.Map<MemberDto>(user);
+            return await _userRepository.GetMemberAsync(username);
         }
 
     }
