@@ -1,0 +1,17 @@
+In this part of the tutorial, the presenter adds interactive buttons to the member cards, allowing users to take actions like viewing user details, liking a user, or going to their messages. They also discuss the positioning of these buttons and how to make them visible only when a user hovers over the card. Here are the key points:
+
+Adding Buttons: Inside the member-card.component.html file, the presenter adds buttons to each member card. They use Font Awesome icons for the buttons. Three buttons are added: one for viewing user details, one for liking the user, and one for accessing messages.
+
+Button Styling: The buttons are given the class btn btn-primary for styling.
+
+Positioning Buttons: In the member-card.component.css file, the presenter makes the parent container (card-img-wrapper) of the buttons relatively positioned by setting position: relative. This is necessary for absolutely positioning the buttons relative to this container.
+
+Absolutely Positioning Buttons: The buttons are absolutely positioned using the position: absolute property. They are initially positioned 30% below the card using bottom: -30%. The left and right properties are set to 0 to align the buttons horizontally. margin-left: auto and margin-right: auto center the buttons.
+
+Button Visibility: Initially, the buttons are hidden with opacity: 0. They are made visible when the user hovers over the card using the :hover pseudo-class.
+
+Animating Buttons: The buttons are given an animation effect using CSS transitions. When hovering over the card, the buttons smoothly transition to their visible position over 0.3 seconds with an ease-in-out timing function.
+
+Conclusion: With these CSS styles and animations, the member cards now have interactive buttons that appear when a user hovers over them, providing a smooth and visually appealing user experience.
+
+The presenter also hints at the next step, which is automatically sending the JWT token when a user is authenticated, improving the authentication flow of the application.
