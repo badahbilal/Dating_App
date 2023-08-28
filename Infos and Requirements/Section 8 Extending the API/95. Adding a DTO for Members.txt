@@ -1,0 +1,13 @@
+You're making great progress with your application! Shaping data using Data Transfer Objects (DTOs) is a common practice in API development. It allows you to define exactly what data should be exposed to the client, which enhances security and reduces the risk of exposing sensitive information.
+
+As you mentioned, AutoMapper is an excellent tool for simplifying the mapping process between your entity classes (e.g., AppUser and Photo) and DTOs (e.g., MemberDTO and PhotoDTO). AutoMapper helps reduce the boilerplate code required to map properties between these classes.
+
+Here's a quick overview of what you're doing:
+
+Creating DTOs: You've created MemberDTO and PhotoDTO classes that specify exactly what data you want to expose to clients.
+
+Using AutoMapper: You'll set up AutoMapper to automatically map properties from your entity classes to your DTOs. This will simplify the process of converting your entities to DTOs when sending data to clients.
+
+Shaping Data: By using DTOs and AutoMapper, you'll ensure that only the necessary data is sent to clients, improving efficiency and security.
+
+In the next steps, you'll configure AutoMapper and implement the mapping logic. This will allow you to convert your entity objects into DTOs easily.
