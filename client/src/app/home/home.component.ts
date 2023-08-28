@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 
@@ -12,10 +11,10 @@ export class HomeComponent implements OnInit {
   registerMode = false;
   users: any;
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.getUsers();
+    //this.getUsers();
   }
 
   registerToggle() {
@@ -23,13 +22,13 @@ export class HomeComponent implements OnInit {
   }
 
 
-  getUsers() {
+  /* getUsers() {
     this.http.get('https://localhost:7267/api/users').subscribe({
       next: response => this.users = response,
       error: error => console.log(error),
       complete: () => console.log('Request has completed'),
     });
-  }
+  } */
 
   // The 'cancelRegisterMode' function is called when the child component emits the 'cancelRegister' event.
   // The function takes a boolean 'event' parameter, which represents the event data sent from the child component.

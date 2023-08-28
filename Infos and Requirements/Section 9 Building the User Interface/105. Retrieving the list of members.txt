@@ -1,0 +1,17 @@
+In this part of the tutorial, the presenter demonstrates how to use the newly created member service to fetch member data and display it in the Member List component. Here's a summary of the steps they covered:
+
+Creating Class Property: Inside the Member List component class, they create a class property called members to store an array of members.
+
+Injecting Member Service: They inject the Member Service into the component by specifying it in the constructor.
+
+Loading Members: The loadMembers method is created to fetch the list of members using the getMembers method from the service. They subscribe to the observable and assign the fetched members to the members property.
+
+Initializing Members: In the ngOnInit lifecycle hook, they call the loadMembers method to load the members when the component is initialized.
+
+Testing in the Browser: The presenter navigates to the browser and demonstrates the functionality. They log in as a user and observe the successful request to retrieve member data from the API.
+
+Displaying Members: In the component's template, they use an *ngFor directive to loop through the members array and display the usernames of the members in a list.
+
+Styling: The presenter mentions that they will add styling to improve the appearance of the member list in the next part of the tutorial.
+
+In summary, this part of the tutorial focuses on fetching and displaying a list of members using the member service. The data is retrieved from the API, and the usernames of the members are displayed in the component's template.
