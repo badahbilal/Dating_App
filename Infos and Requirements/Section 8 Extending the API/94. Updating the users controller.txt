@@ -1,0 +1,14 @@
+In this section, you've made some important changes to your users controller and resolved issues related to returning related data (photos) from your database using Entity Framework Core. Here's a summary of the key changes:
+
+Dependency Injection of IUserRepository:
+
+Instead of injecting the DbContext directly into your users controller, you've injected the IUserRepository interface. This is a better practice because it abstracts the data access logic and makes your controller more testable.
+Refactoring Controller Actions:
+
+In your controller actions, you've replaced direct calls to the DbContext with calls to the methods of the IUserRepository interface. For example, you now use userRepository.GetUsersAsync() instead of context.Users.ToList().
+Resolving Related Data Issue:
+
+You encountered an issue where the related data (photos) wasn't being loaded along with the users. You resolved this issue by using the Include method to specify that you want to include the related photos when querying for users.
+However, you've encountered a new issue related to object cycles and serialization. This happens when Entity Framework Core tries to serialize related entities in an infinite loop, causing a stack overflow error. To address this issue, you need to configure Entity Framework Core to ignore certain reference loops and navigation properties when serializing data.
+
+In the next lesson, you'll learn how to resolve this serialization issue and continue working on your application.

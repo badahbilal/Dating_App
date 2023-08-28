@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using API.Data;
 using API.Entities;
+using API.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,31 +15,27 @@ namespace API.Controllers
     [Authorize]
     public class UsersController : BaseApiController
     {
-        private readonly DataContext _context;
+        private readonly IUserRepository _userRepository;
 
-        public UsersController(DataContext context)
+        public UsersController(IUserRepository userRepository)
         {
-            _context = context;
+            _userRepository = userRepository;
         }
 
         // Apply the AllowAnonymous attribute to allow anonymous access to this action or controller.
         // Unauthenticated users will be permitted to access the decorated resource.
         //[AllowAnonymous]
         [HttpGet]
-        public ActionResult<IEnumerable<AppUser>> GetUsers()
+        public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
         {
-            var users = _context.Users.ToList();
+            return Ok(await _userRepository.GetUsersAsync());
 
-            return users;
         }
 
-
-        [HttpGet("{id}")]
-        public ActionResult<AppUser> GetUser(int id)
+        [HttpGet("{username}")]
+        public async Task<ActionResult<AppUser>> GetUser(string username)
         {
-
-            return _context.Users.Find(id);
-
+            return await _userRepository.GetUserByUsernameAsync(username);
         }
     }
 }
