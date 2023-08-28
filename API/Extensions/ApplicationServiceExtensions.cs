@@ -36,6 +36,11 @@ namespace API.Extensions
             // The TokenService is responsible for generating and managing authentication tokens.
             services.AddScoped<ITokenService, TokenService>();
 
+
+            // Register the 'IUserRepository' service with the 'UserRepository' implementation.
+            services.AddScoped<IUserRepository, UserRepository>();
+
+
             return services;
         }
     }

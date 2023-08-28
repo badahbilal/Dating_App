@@ -1,0 +1,18 @@
+In this section, you learned how to implement the Repository Pattern in your application by creating an interface and an implementation class for your user repository. Here's a summary of the key steps:
+
+Create IUserRepository Interface:
+
+Create a new C# interface called IUserRepository in the Interfaces folder.
+Define the methods that the user repository will implement. In this case, you defined methods like Update, SaveAllAsync, GetUsersAsync, GetUserByIdAsync, and GetUserByUsernameAsync.
+Create UserRepository Implementation:
+
+Create a new C# class called UserRepository in the Data folder.
+Implement the IUserRepository interface in the UserRepository class.
+Add a constructor to inject the DataContext (your database context) into the repository class.
+Implement the methods defined in the IUserRepository interface. These methods will interact with the database using Entity Framework.
+Register the UserRepository:
+
+In the ApplicationServiceExtensions.cs file, register the UserRepository as a scoped service. This makes it injectable into your controllers.
+By implementing the Repository Pattern, you have separated your data access logic from your controllers, making your code more maintainable and testable. Your controllers can now depend on the IUserRepository interface, which abstracts the underlying data access methods provided by Entity Framework.
+
+In the next steps, you will update your user controller to use the IUserRepository interface instead of directly injecting the DataContext, further improving your code structure and testability.
