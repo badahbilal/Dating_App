@@ -15,14 +15,21 @@ export class MemberService {
 
   // Get a list of members from the API.
   getMembers() {
-    return this.http.get<Member[]>(this.baseUrl + 'users', this.getHttpOptions());
+    return this.http.get<Member[]>(this.baseUrl + 'users');
   }
 
   // Get a specific member by username from the API.
   getMember(username: string) {
-    return this.http.get<Member>(this.baseUrl + 'user/' + username, this.getHttpOptions());
+    return this.http.get<Member>(this.baseUrl + 'user/' + username);
   }
 
+}
+
+/**
+ * 
+ * 
+ * 
+ * Deleted Code 
   // Helper method to create HTTP request headers with authorization token.
   private getHttpOptions() {
     const userString = localStorage.getItem('user');
@@ -40,5 +47,4 @@ export class MemberService {
       })
     };
   }
-}
-
+ */

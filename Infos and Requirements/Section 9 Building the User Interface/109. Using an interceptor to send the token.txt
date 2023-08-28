@@ -1,0 +1,23 @@
+In this part of the tutorial, the presenter introduces the concept of interceptors in Angular and demonstrates how to create a JWT (JSON Web Token) interceptor to automatically send the JWT token with every authenticated HTTP request. Here are the key points:
+
+Creating the JWT Interceptor: The presenter uses the Angular CLI to create a new interceptor named "JWT interceptor" in the interceptors folder.
+
+Injecting Account Service: Inside the JWT interceptor, the presenter injects the accountService, which is responsible for managing user accounts and authentication.
+
+Using currentUser$ Observable: The currentUser$ observable from the accountService is used to get the current user's information, including the JWT token.
+
+Handling the Request: Within the intercept method, the presenter checks if there is a current user (i.e., the user is authenticated). If a user exists, the JWT token is retrieved from the user's data, and an HTTP request clone is created.
+
+Setting the Authorization Header: The JWT token is added to the request's headers by using the setHeaders method. The Bearer prefix is added to the token to indicate that it is a bearer token.
+
+Completing the Request: The modified request is then passed to the next.handle method to continue the request pipeline.
+
+Registering the Interceptor: In the app module, the JWT interceptor is added to the list of interceptors, ensuring that it intercepts outgoing HTTP requests.
+
+Removing Manual Token Handling: In the members.service.ts, the method used for manually attaching the JWT token to requests is removed since the interceptor now handles this task globally.
+
+Testing the Application: The application is tested by refreshing the page, logging in as a user, and verifying that the JWT token is correctly added to the HTTP request headers.
+
+The JWT interceptor simplifies the process of attaching the JWT token to authenticated requests by centralizing this logic within an interceptor, reducing the need to manually handle tokens in service methods.
+
+The next step in the tutorial will likely involve adding functionality to navigate to a user's detailed page when the "View User" button is clicked.
