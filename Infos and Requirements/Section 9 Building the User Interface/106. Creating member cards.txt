@@ -1,0 +1,17 @@
+In this part of the tutorial, the presenter demonstrates how to create a Member Card component and use it to display member information within a styled card format. Here are the key steps:
+
+Create Member Card Component: Using the Angular CLI, they generate a new component named "member-card" within the "members" folder.
+
+Define Input Property: Inside the "member-card" component, they define an @Input property named member of type Member. This property will be used to pass member data from the parent component.
+
+Conditional Rendering: In the "member-card" component's template (HTML), they use Angular's *ngIf directive to conditionally render the card content only if the member property is defined. This prevents errors when trying to access properties of an undefined member.
+
+Bootstrap Styling: They use Bootstrap classes to style the card. The card includes an image, member's name (username), and member's city.
+
+Pass Member Data: In the parent component, "member-list," they replace the previous paragraph content with the "app-member-card" component. They pass the member data to the "member" input property of each card using the *ngFor loop.
+
+Testing: They demonstrate that the member cards are now being displayed for each member in the list, and no errors are shown.
+
+The presenter also briefly mentions the use of optional chaining (the ?. operator) to handle potential null or undefined properties. However, they opt to use conditional rendering with *ngIf to ensure that the card content is displayed only when member data is available.
+
+The next step in the tutorial is likely to cover adding dynamic styling or interactivity, as mentioned at the end of this part.
