@@ -1,0 +1,17 @@
+In this part of the tutorial, the presenter focuses on implementing functionality to navigate to a user's detailed page when the "View User" button is clicked on the member card. Here's a summary of the key steps:
+
+Member Detail Component: The presenter starts by opening the member-detail.component.ts file, which was created previously. Inside this component, they declare a member property of type Member | undefined. Since the member might be undefined initially, they explicitly allow for this possibility by specifying Member | undefined.
+
+Dependency Injection: The component injects the memberService and ActivatedRoute from Angular.
+
+Load Member Method: A method called loadMember is created. This method retrieves the username from the activated route's snapshot and uses it to call the getMember method from the memberService to fetch the member's details. The member is assigned to the member property of the component.
+
+Router Link: Inside the member-card.component.html file, the presenter adds a routerLink attribute to the "View User" button. The routerLink is set to ['/members', member?.username], where member?.username is the username of the member associated with the card. The use of the safe navigation operator (?.) ensures that the username is only accessed if the member exists.
+
+Conditional Rendering: In the member-detail.component.html file, the presenter uses the *ngIf directive to conditionally render the member's details based on whether the member property exists. This ensures that the view is constructed safely and prevents errors if the member is undefined.
+
+Testing: The presenter demonstrates that clicking on the "View User" button on a member card takes the user to the corresponding member detail page. They also show that the optional chaining operator (?.) is no longer needed for member properties due to the conditional rendering in the template.
+
+This implementation ensures that when a user clicks on the "View User" button, they are navigated to the member's detailed page, and the member's details are displayed. Additionally, the code includes defensive programming to handle cases where a member might be undefined, improving the overall robustness of the application.
+
+The tutorial may continue with additional features or improvements to the Angular application.

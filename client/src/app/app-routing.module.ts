@@ -27,9 +27,9 @@ const routes: Routes = [
       // The 'authGuard' route guard is also applied to this child route.
       { path: 'members', component: MemberListComponent, canActivate: [authGuard] },
 
-      // Route for the "members/:id" path maps to the MemberDetailComponent.
+      // Route for the "members/:username" path maps to the MemberDetailComponent.
       // No specific route guard is applied to this child route.
-      { path: 'members/:id', component: MemberDetailComponent },
+      { path: 'members/:username', component: MemberDetailComponent },
 
       // Route for the "lists" path maps to the ListsComponent.
       // No specific route guard is applied to this child route.

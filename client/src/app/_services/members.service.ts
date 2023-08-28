@@ -20,7 +20,7 @@ export class MemberService {
 
   // Get a specific member by username from the API.
   getMember(username: string) {
-    return this.http.get<Member>(this.baseUrl + 'user/' + username);
+    return this.http.get<Member>(this.baseUrl + 'users/' + username);
   }
 
 }
