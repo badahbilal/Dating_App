@@ -1,0 +1,19 @@
+In this part of the tutorial, the presenter covers the following topics:
+
+Using Environment Variables: They discuss the importance of avoiding hardcoded URLs in the application. To address this, they introduce the use of environment variables in Angular. They mention that there are separate environment files for development and production, each containing an API URL.
+
+Generating Environment Files: The presenter uses the Angular CLI command ng g environment to generate environment files for development and production. They set the API URL for each environment accordingly.
+
+Configuring Services: The presenter revisits the existing service (account service) and replaces the hardcoded base URL with the one obtained from the environment variable.
+
+Creating a New Service: They create a new service called "members" using the Angular CLI's ng g service command. This service will be responsible for making HTTP requests related to members.
+
+Injecting HttpClient: In the "members" service, the presenter injects the HttpClient service from Angular to make HTTP requests.
+
+Creating Service Methods: They create two methods in the "members" service: getMembers() and getMember(username: string). These methods make HTTP GET requests to retrieve a list of members and an individual member, respectively.
+
+Handling Authentication Token: The presenter introduces a private method, getHttpOptions(), in the "members" service to handle adding the authentication token to the HTTP request headers. They extract the token from local storage and use it in the authorization header.
+
+Completing the Member Service: With the new "members" service in place, the presenter demonstrates how it can be used to fetch member data from the API. They mention that they will continue to explain how to use this service in components in the next part of the tutorial.
+
+In summary, this part of the tutorial focuses on setting up environment variables for different development stages (development and production), configuring services to use these environment variables, creating a new service for members, and implementing methods for making HTTP requests with proper token authentication.
