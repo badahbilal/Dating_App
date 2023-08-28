@@ -1,0 +1,13 @@
+In Module Nine, you will focus on building the user interface for your Angular application. Here are the key learning goals for this section:
+
+TypeScript Integration: You will begin leveraging TypeScript in your Angular application. TypeScript provides strong typing and enhances error detection, making your code more robust and maintainable.
+
+Async Pipe Usage: You'll explore the use of the async pipe to efficiently retrieve and display data in your application. This pipe simplifies working with asynchronous data streams.
+
+Bootstrap Styling: You'll continue using Bootstrap to style your application, ensuring a consistent and visually appealing user interface.
+
+CSS Tricks: You'll learn some basic CSS techniques to enhance the appearance and layout of your application, customizing it to your needs.
+
+Third-Party Photo Gallery: You will integrate a third-party photo gallery into your application, allowing users to view and interact with photos. This feature will enhance the functionality and user experience of your app.
+
+By the end of this section, your application will have a functional and visually appealing user interface, bringing it closer to completion.
