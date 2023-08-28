@@ -1,0 +1,18 @@
+In this part of the tutorial, the presenter demonstrates how to add interactivity to the member cards by applying a zoom and fade effect when a user hovers over a card. They also discuss the concept of CSS encapsulation in Angular. Here are the key points:
+
+Adding Hover Effects: In the member-card.component.css file, they apply a CSS hover effect to the card images. When a user hovers over a card, it scales up (zooms in) and slightly fades out. This gives a visual indication of interactivity.
+
+Preventing Image Overflow: To prevent the image from overflowing outside of its container when zoomed, they apply overflow: hidden to the .card-img-wrapper class. This confines the zoom effect within the card's boundaries.
+
+CSS Encapsulation in Angular: The presenter explains that Angular uses CSS encapsulation to scope component styles. By default, styles defined in a component's CSS file are encapsulated and only apply within that component.
+
+View Encapsulation Options: They briefly mention three view encapsulation options:
+
+Emulated (Default): Styles are scoped using Angular's emulation mechanism, which adds a unique attribute to the component's host element.
+None: Styles are global and not encapsulated. They apply to all instances of a class, potentially affecting the entire application.
+Shadow DOM: Styles are encapsulated using the browser's native Shadow DOM API.
+Choosing the Default Emulated Encapsulation: The presenter explains that for this application, they'll stick with the default emulated encapsulation, which provides component-specific styles without affecting the entire application.
+
+Testing: They demonstrate that the hover effects work correctly on the member cards.
+
+The presenter also hints at adding clickable buttons to the cards in the next lesson, which will add further interactivity to the application.
