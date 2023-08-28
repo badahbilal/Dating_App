@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Data;
+using API.DTOs;
 using API.Entities;
 using API.Interfaces;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,26 +18,41 @@ namespace API.Controllers
     public class UsersController : BaseApiController
     {
         private readonly IUserRepository _userRepository;
+        private readonly IMapper _mapper;
 
-        public UsersController(IUserRepository userRepository)
+        public UsersController(IUserRepository userRepository, IMapper mapper)
         {
+            _mapper = mapper;
             _userRepository = userRepository;
         }
 
         // Apply the AllowAnonymous attribute to allow anonymous access to this action or controller.
         // Unauthenticated users will be permitted to access the decorated resource.
         //[AllowAnonymous]
+        // HTTP GET method to retrieve a list of users.
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
+        public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers()
         {
-            return Ok(await _userRepository.GetUsersAsync());
+            // Retrieve a list of users from the repository asynchronously.
+            var users = await _userRepository.GetUsersAsync();
 
+            // Map the list of users to a list of 'MemberDto' objects using AutoMapper.
+            var usersToReturn = _mapper.Map<IEnumerable<MemberDto>>(users);
+
+            // Return the list of 'MemberDto' objects as a successful response (HTTP 200 OK).
+            return Ok(usersToReturn);
         }
 
+        // HTTP GET method to retrieve a specific user by username.
         [HttpGet("{username}")]
-        public async Task<ActionResult<AppUser>> GetUser(string username)
+        public async Task<ActionResult<MemberDto>> GetUser(string username)
         {
-            return await _userRepository.GetUserByUsernameAsync(username);
+            // Retrieve a user by username from the repository asynchronously.
+            var user = await _userRepository.GetUserByUsernameAsync(username);
+
+            // Map the user object to a 'MemberDto' object using AutoMapper.
+            return _mapper.Map<MemberDto>(user);
         }
+
     }
 }

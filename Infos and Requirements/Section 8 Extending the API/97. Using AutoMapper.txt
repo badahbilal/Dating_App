@@ -1,0 +1,15 @@
+In this section, you've integrated AutoMapper into your application to simplify the mapping between domain entities (like AppUser and Photo) and Data Transfer Objects (DTOs) such as MemberDTO and PhotoDTO. Here's a summary of the key points:
+
+AutoMapper Integration: You've added AutoMapper to your project and created an AutoMapperProfiles class that inherits from AutoMapper's Profile class. In this class, you've defined mapping rules for different pairs of entities and DTOs.
+
+Configuration: In the Startup.cs file, you've configured AutoMapper as a service and instructed it to scan the current assembly for mapping profiles.
+
+Controller Integration: In your UsersController, you've injected IMapper, an AutoMapper interface, along with your IUserRepository. This allows you to use AutoMapper for mapping within your controller.
+
+Mapping in Controller Actions: Inside your controller actions, such as GetUsers and GetUser, you've used AutoMapper to map data obtained from the repository to the corresponding DTOs. This ensures that the API returns data in the expected format without manual mapping.
+
+Testing with Postman: You've tested your controller actions in Postman to verify that the mapping is working correctly, and you've observed that data is returned in the desired DTO format.
+
+Additionally, you've identified a need to include a PhotoUrl property in your MemberDTO to avoid having to extract the main photo URL from the photos collection when using the DTO in your app. You'll address this in the next section.
+
+Overall, you've successfully integrated AutoMapper into your application, simplifying the process of mapping between entities and DTOs, and ensuring that your API returns data in a standardized format.
