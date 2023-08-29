@@ -1,0 +1,17 @@
+In this section, you'll be focusing on updating resources in the API, specifically allowing users to update their profiles. Here are the key learning goals for this section:
+
+Implementing Persistence: You'll learn how to implement data persistence when updating resources in the API. This involves enabling users to update their profile information, such as their name, bio, and profile photo.
+
+Angular Template Forms: You'll revisit Angular template-driven forms, building upon the basics covered in a previous section. You'll explore more advanced form features, such as form validation, custom validators, and handling form submission.
+
+Can Deactivate Route Guard: You'll gain an understanding of the CanDeactivate route guard, which allows you to prompt users when they attempt to leave a form page with unsaved changes. This is a useful feature to prevent data loss.
+
+ViewChild Decorator: You'll learn about the @ViewChild decorator in Angular, which provides a way to access elements in your templates directly from your components. This can be handy for tasks like manipulating DOM elements.
+
+Persisting Changes to the API: You'll implement the logic required to persist changes made by users to their profiles back to the API. This involves making HTTP requests to update user data on the server.
+
+Adding Loading Indicators: You'll explore how to add loading indicators to your client application. These indicators inform users that a process is ongoing, providing a better user experience when dealing with asynchronous operations.
+
+Caching Data: You'll discover the concept of data caching. Instead of fetching data from the API every time a component is loaded, you'll use Angular services to store and manage data, ensuring it's readily available when needed.
+
+By the end of this section, you'll have a deeper understanding of Angular forms, route guards, data persistence, and how to enhance the user experience by adding loading indicators and optimizing data retrieval through caching. These skills will enable you to create more interactive and responsive Angular applications.
