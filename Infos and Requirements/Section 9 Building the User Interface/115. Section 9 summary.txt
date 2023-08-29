@@ -1,0 +1,13 @@
+In this section, the learning goals were focused on enhancing the Angular application by introducing TypeScript, implementing authentication and authorization using JWT tokens, applying styling to improve the visual appearance, and integrating a third-party photo gallery. Here's a summary of what was covered:
+
+TypeScript Usage: TypeScript was introduced, emphasizing its advantages in terms of type safety and code quality. TypeScript was used to define types for various parts of the application.
+
+JWT Token Handling: Interceptors were added to automatically send JWT tokens with HTTP requests, improving security and eliminating the need to manually manage tokens.
+
+Styling: Some CSS styling was applied to improve the visual design of the application, including member cards and the member detail page. While not a comprehensive web design tutorial, some CSS tricks were demonstrated.
+
+Third-Party Gallery: The "ng-gallery" package was integrated to create a photo gallery in the member detail page. This gallery allows users to view photos uploaded by other users.
+
+Root Parameters: The concept of root parameters was introduced, enabling the application to extract a user's username from the route URL in order to fetch user-specific data from the API.
+
+In the upcoming section, the focus will shift to enabling users to update their profiles. This will involve implementing forms for profile editing, handling form submission, making updates to user data in the API, and ensuring data persistence. This section will further enhance the functionality of the application, allowing users to manage their profiles effectively.
