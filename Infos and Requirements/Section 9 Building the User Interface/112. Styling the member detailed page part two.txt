@@ -1,0 +1,13 @@
+In this part of the tutorial, the presenter continues enhancing the Member Detail page by adding tabs for user information, photos, and messages. They also apply custom styling to these tabs. Here's a summary of the key steps:
+
+Importing Tabs Module: The presenter starts by importing the Tabs module from Angular Bootstrap in the shared module.
+
+Creating Tab Set: In the Member Detail component HTML, a Bootstrap tabset component is added. Inside the tabset, the presenter creates tabs for different sections: "About," "Interests," "Photos," and "Messages." They use the *ngIf directive to display content only if the corresponding member property is available.
+
+Custom Styling: The presenter explains that Angular components can have encapsulated styles, but they can also apply global styles. They use a custom CSS class, member-tabs, to override the default Bootstrap tab styling globally. The custom styles are defined in a separate styles.css file.
+
+Global CSS Styles: The presenter copies and pastes CSS styles from a provided member-tabs.css file into the global styles.css file to apply custom styling to the tabs. These styles include underlines for the active tab, hover effects, and other adjustments to improve the appearance of the tabs.
+
+Testing: The presenter demonstrates the updated Member Detail page with the styled tabs, including the "About," "Interests," "Photos," and "Messages" sections. These tabs provide a more user-friendly way to navigate and view the user's information.
+
+In the next lesson, the presenter will focus on adding content to the "Photos" and "Messages" tabs to complete the Member Detail page.
