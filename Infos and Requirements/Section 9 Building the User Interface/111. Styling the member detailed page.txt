@@ -1,0 +1,13 @@
+In this part of the tutorial, the presenter focuses on enhancing the Member Detail page by adding styling and content. Here's a summary of the key steps taken in the tutorial:
+
+1- Member Detail Component HTML: The presenter opens the member-detail.component.html file and replaces the existing content with a Bootstrap grid layout. They create a row and use *ngIf to check if the member is defined before rendering its details. Inside this row, they create a column that takes up one-third of the available space (col-4) and display the user's photo. If the member doesn't have a photo URL, a default image is shown.
+
+2- Member Details: Below the user's image, the presenter adds a card-body to display various member details. They use HTML elements like strong and p to display the user's location (city and country), age, last active date, and member since date. These details are interpolated from the member object.
+
+3- Card Footer: The presenter adds a card-footer below the card-body. Inside the footer, they create a button group (btn-group) to house two buttons: one for liking the user and another for going to the messages with the user.
+
+4- CSS Styling: The presenter switches to the member-detail.component.css file to add CSS styles for improving the layout. They add styles for the image, card body, card footer, and buttons to enhance the appearance of the Member Detail page. This includes adjusting margins, padding, background colors, and removing borders.
+
+5- Testing: The presenter demonstrates the improvements made to the Member Detail page by showing a sample user's details, including the user's image, location, age, and buttons for liking and messaging the user.
+
+The tutorial continues to focus on improving the Member Detail page's content and appearance.
