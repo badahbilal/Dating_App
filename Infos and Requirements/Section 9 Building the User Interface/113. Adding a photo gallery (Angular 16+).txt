@@ -1,0 +1,22 @@
+https://ngx-gallery.netlify.app/#/
+
+
+In this part of the tutorial, the presenter demonstrates how to integrate a photo gallery using the "ng-gallery" package into the Member Detail component of the Angular application. However, there are some important steps and considerations to note:
+
+Installing "ng-gallery": Instead of using a previously mentioned package that is not compatible with Angular versions 14 and above, the presenter introduces the "ng-gallery" package, which is compatible with Angular 16. They install it using npm.
+
+Creating a Standalone Component: Since "ng-gallery" provides standalone components, the Member Detail component needs to be converted into a standalone component to use it. This involves making adjustments in the component's metadata, including setting standalone to true and importing the necessary modules such as CommonModule and TabsModule.
+
+Loading Gallery Images: To populate the photo gallery, a new property called images of type GalleryItem[] is added to the component. The images array will contain the images to be displayed in the gallery. A method called GetImages is also added to populate this array with images from the member's photos.
+
+Using the Gallery Component: In the component's HTML, the presenter replaces the placeholder for the photo gallery with the gallery component provided by "ng-gallery." The images array is passed as input to the gallery component.
+
+Conditional Loading: To ensure that the gallery only loads when the "Photos" tab is active, an *ngIf directive is used. It checks the active state of the "Photos" tab to determine whether to load the gallery.
+
+Styling the Gallery: The presenter briefly touches on styling by adding a CSS class to the gallery and adjusting its height in the global CSS file.
+
+Adding Placeholder Image: An alternative image, "user.png," is added to the assets folder to serve as a placeholder image when a user does not have a profile photo. This alternative image is also used in the Member Card component.
+
+Summary: The presenter summarizes the steps taken in this section, which include integrating the "ng-gallery" package, converting the Member Detail component into a standalone component, loading gallery images, and handling conditional loading of the gallery.
+
+The tutorial emphasizes the importance of using standalone components when integrating third-party packages that provide such components. It also demonstrates how to create an image gallery with the "ng-gallery" package and provides tips on adding custom styling and alternative images for a more user-friendly experience.
