@@ -1,0 +1,13 @@
+In this section of your Angular application development, the following key tasks were accomplished:
+
+Angular Form Creation: You transformed a regular HTML form into an Angular form by using a template reference variable (#editForm) and the (ngSubmit) event handler to handle form submissions.
+
+Toaster Integration: You incorporated a toaster service to provide user feedback through toast notifications when a profile update is successful.
+
+Button Enable/Disable: You implemented logic to enable and disable the "Save Changes" button based on whether the form is dirty (i.e., if there are unsaved changes). This prevents users from submitting the form when there are no changes.
+
+Form Reset: After successfully submitting the form, you added functionality to reset the form to its original state, clearing any unsaved changes. This ensures that the form is ready for the next edit.
+
+Template Reference Variable Caution: You emphasized the importance of proper casing in template reference variables, as Angular relies on the correct naming for binding and functionality.
+
+In the upcoming section, you will explore how to prevent users from navigating away from the component with unsaved changes, addressing a common issue where users accidentally lose their work.
