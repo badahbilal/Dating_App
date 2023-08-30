@@ -1,0 +1,17 @@
+In this part of the tutorial, you are working on the content of the member-edit component's template. Here's a summary of what you have done:
+
+Copied content from the member-detail component's HTML and pasted it into the member-edit component's HTML. This provides a starting point for your edit profile page.
+
+Added a "Your Profile" heading and an alert box to notify users of unsaved changes.
+
+Created a form to allow users to edit their profile information.
+
+Added text areas for the user's introduction, what they are looking for, and their interests, all bound to the member properties using two-way binding with ngModel.
+
+Included inputs for the user's city and country.
+
+Removed unnecessary tabs and added a placeholder for editing photos.
+
+Copied some CSS from the member-detail component to style the content.
+
+Next, you plan to focus on implementing Angular template forms, dynamically displaying changes in the form, and handling the "Save Changes" button functionality. These steps will allow users to edit their profile data and update it through the API.
