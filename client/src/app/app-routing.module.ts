@@ -9,6 +9,7 @@ import { authGuard } from './_guards/auth.guard';
 import { TestErrorComponent } from './errors/test-error/test-error.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
 
 // Define an array of route configurations for navigation in the Angular application.
 const routes: Routes = [
@@ -30,6 +31,8 @@ const routes: Routes = [
       // Route for the "members/:username" path maps to the MemberDetailComponent.
       // No specific route guard is applied to this child route.
       { path: 'members/:username', component: MemberDetailComponent },
+
+      { path: 'member/edit', component: MemberEditComponent },
 
       // Route for the "lists" path maps to the ListsComponent.
       // No specific route guard is applied to this child route.

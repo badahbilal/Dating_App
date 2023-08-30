@@ -1,0 +1,17 @@
+In this section, you're focusing on updating resources, particularly allowing users to edit their profiles. Here's a recap of what you've done in this part of the tutorial:
+
+Created a new Angular component called member-edit using the Angular CLI. This component will be used to enable users to edit their profiles.
+
+Updated the app routing module to add a route for the member-edit component within the protected routes section. This ensures that only authenticated users can access this route.
+
+Added a link to the member-edit component in the navigation bar (navbar) using the routerLink directive.
+
+Injected the AccountService and MemberService into the member-edit component's constructor to access user data and retrieve a member's profile.
+
+Loaded the user's information from the AccountService into the list.user property within the constructor, handling it asynchronously using the pipe and subscribe operators.
+
+Created a loadMember method in the member-edit component to load a member's profile based on the user's username. This method checks if the user is available and makes a call to the MemberService to retrieve the member's data.
+
+Displayed the username in the member-edit component's template using interpolation, ensuring that the username is correctly loaded and displayed when users navigate to the edit profile page.
+
+You've set up the initial structure for the member-edit component and established a connection to load user data. In the next lesson, you'll proceed to create the contents of the member-edit component, enabling users to edit their profiles and send updates to the API.
