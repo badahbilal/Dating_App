@@ -10,6 +10,7 @@ import { TestErrorComponent } from './errors/test-error/test-error.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { preventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 
 // Define an array of route configurations for navigation in the Angular application.
 const routes: Routes = [
@@ -32,7 +33,7 @@ const routes: Routes = [
       // No specific route guard is applied to this child route.
       { path: 'members/:username', component: MemberDetailComponent },
 
-      { path: 'member/edit', component: MemberEditComponent },
+      { path: 'member/edit', component: MemberEditComponent , canDeactivate : [preventUnsavedChangesGuard]},
 
       // Route for the "lists" path maps to the ListsComponent.
       // No specific route guard is applied to this child route.

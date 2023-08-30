@@ -1,0 +1,11 @@
+In this section of your Angular application development, you accomplished the following tasks:
+
+Can Deactivate Guard: You implemented a Can Deactivate guard to prevent users from navigating away from the member edit component when there are unsaved changes in the form. If the form is dirty (i.e., changes have been made but not saved), a confirmation prompt appears when the user tries to navigate away, asking if they are sure they want to continue and warning them about potential data loss.
+
+Host Listener for Window Beforeunload Event: To enhance user experience, you used a host listener to listen for the beforeunload event of the browser's window object. When this event is triggered (e.g., when a user tries to leave the page or navigate away with unsaved changes), your application checks if the form is dirty. If it is, a browser-native confirmation dialog appears, providing the user with a similar warning about potential data loss.
+
+Browser-Level Prompt: The browser-level confirmation prompt ensures that users are alerted to unsaved changes when they attempt to leave the page. This behavior is controlled by the browser, and its appearance and wording may vary among different browsers.
+
+This functionality helps users avoid accidental data loss and encourages them to save their changes before leaving the page.
+
+In the next section, you will explore how to persist changes made in the form to the API, ensuring that the user's profile updates are saved and reflected in the application.
