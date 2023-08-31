@@ -14,7 +14,7 @@ import { MemberService } from 'src/app/_services/members.service';
 })
 export class MemberEditComponent implements OnInit {
 
-  @ViewChild('editForm') editForm : NgForm | undefined;
+  @ViewChild('editForm') editForm: NgForm | undefined;
   @HostListener('window:beforeunload', ['$event']) unloadNotification($event: any) {
     if (this.editForm?.dirty) {
       $event.returnValue = true;
@@ -42,9 +42,13 @@ export class MemberEditComponent implements OnInit {
     })
   }
 
-  updateMember(){
-    console.log(this.member);
-    this.toastr.success("Profile uploaded successfully");
-    this.editForm?.reset(this.member);
+  updateMember() {
+    this.memberService.updateMember(this.editForm?.value).subscribe({
+      next: _ => {
+        this.toastr.success("Profile uploaded successfully");
+        this.editForm?.reset(this.member);
+      }
+    })
+
   }
 }
