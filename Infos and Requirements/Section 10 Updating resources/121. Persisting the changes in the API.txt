@@ -1,0 +1,15 @@
+In this section of your application development, you focused on implementing the server-side functionality necessary to update user profiles via the API. Here are the key steps you took:
+
+Member Update DTO: You created a new data transfer object (DTO) called MemberUpdateDTO to represent the data sent by the client to update a user's profile. This DTO includes properties for Introduction, LookingFor, Interests, City, and Country.
+
+AutoMapper Profile: You updated the AutoMapper configuration by adding a new profile to map data from MemberUpdateDTO to the AppUser entity. Since the property names match, no additional configuration was required.
+
+Update User Endpoint: You created a new API endpoint using HTTP PUT to handle profile updates. The endpoint does not require the username in the route parameter since it can be extracted from the JWT token of the authenticated user. Inside the endpoint, you extracted the username from the token and retrieved the corresponding user from the repository.
+
+Mapping Data: You used AutoMapper to map the properties from the MemberUpdateDTO to the user entity. This updated the user object with the new data provided in the DTO.
+
+Saving Changes: You called the repository's SaveAllAsync method to save the changes to the database. If changes were successfully saved, a response with HTTP status code 204 (No Content) was returned, indicating a successful update. If no changes were made, you returned a bad request (HTTP status code 400) with a message stating that the update failed because there were no changes to save.
+
+Testing: You demonstrated the functionality by using Postman to send requests to the API. You verified that updates were successful when changes were made and that bad requests were returned when no changes occurred.
+
+By completing these server-side tasks, you have established the necessary API endpoints and logic to handle user profile updates. In the next lesson, you will integrate these changes into your client-side Angular application, allowing users to interact with the API to update their profiles.

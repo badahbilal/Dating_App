@@ -36,6 +36,9 @@ namespace API.Helpers
             // Configure mapping from Photo to PhotoDto.
             CreateMap<Photo, PhotoDto>();
 
+            // Configure mapping from MemberUpdateDto to AppUser.
+            CreateMap<MemberUpdateDto, AppUser>();
+
         }
     }
 
