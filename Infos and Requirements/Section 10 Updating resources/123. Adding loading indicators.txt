@@ -1,0 +1,34 @@
+In this section, the main focus is on adding a loading spinner to the Angular application to provide visual feedback to users during HTTP requests. Here are the key steps:
+
+Install Spinner Library:
+
+Install the Spinner library using npm, e.g., npm install ngx-spinner --save.
+Include Spinner CSS:
+
+Add the appropriate Spinner CSS to your project by modifying the angular.json file's styles array.
+Configuration in Shared Module:
+
+Import and configure the SpinnerModule in your shared module, specifying the type of spinner and its styling.
+Create a Busy Service:
+
+Create a service (e.g., busy.service.ts) that will manage the busy state of your application.
+Include a property busyRequestCount to keep track of active HTTP requests.
+Define methods to start and stop the busy state, incrementing and decrementing busyRequestCount.
+Use the Spinner service to show and hide the spinner as needed.
+Create a Loading Interceptor:
+
+Create an HTTP Interceptor (e.g., loading.interceptor.ts) to intercept HTTP requests.
+In the interceptor, use the busyService to indicate that an HTTP request is in progress.
+Use the RxJS delay operator to simulate a delay (optional but realistic).
+In the finalize block, indicate that the HTTP request is complete.
+Add Interceptor to App Module:
+
+Register the LoadingInterceptor in the providers array of your app module.
+Display Spinner in App Component:
+
+Place the Spinner component in your app component's HTML template where it can be seen across the application.
+Customize the spinner type and add a loading message if desired.
+Restart Angular Application:
+
+After modifying the angular.json file and adding the interceptor, stop and restart your Angular application for the changes to take effect.
+With these steps, your Angular application will display a loading spinner during HTTP requests, providing users with visual feedback and a more realistic experience, especially when interacting with an API.
