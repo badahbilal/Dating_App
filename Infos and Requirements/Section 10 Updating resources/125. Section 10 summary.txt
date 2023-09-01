@@ -1,0 +1,11 @@
+In Section ten, the focus was on persisting changes to the API server in an Angular application. Key points covered in this section include:
+
+Persistence when Updating Resources: The section delved into managing data updates and ensuring changes made by users are sent to the API server.
+
+Template Forms and ViewChild: The usage of template forms and the ViewChild decorator was explored, demonstrating how to access form data and components within Angular.
+
+Can Deactivate Route Guard: The CanDeactivate route guard was introduced to prevent users from leaving a page with unsaved changes or to provide a warning before navigating away.
+
+Loading Indicators: Loading indicators were integrated into the application to indicate when API requests are being made. This revealed the need to optimize data retrieval by storing it in a service for efficiency.
+
+The next section will focus on enabling users to upload photos to the application, expanding the functionality and user experience.
