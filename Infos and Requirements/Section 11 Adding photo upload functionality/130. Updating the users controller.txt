@@ -1,0 +1,25 @@
+In this lesson, the instructor modifies the Users controller to include a new method for uploading photos. Here are the key steps and changes made in the code:
+
+The instructor injects the IPhotoService into the Users controller using the name photoService.
+
+A new HTTP POST method named AddPhoto is added to the Users controller. It's decorated with the [HttpPost("add-photo")] attribute to specify the route.
+
+This AddPhoto method takes an IFormFile parameter named file, representing the uploaded image.
+
+To retrieve the current user, the instructor uses a custom extension method GetUsername on the User object, which reads the username from the claims principle. This allows for cleaner and more readable code.
+
+The uploaded image is passed to the photoService.AddPhotoAsync method for processing. If an error occurs during the upload, the method returns a bad request with the error message.
+
+If the upload is successful, a new Photo entity is created with the URL and public ID obtained from the upload result. If it's the user's first photo, the IsMain property is set to true.
+
+The newly created Photo entity is added to the user's Photos collection.
+
+A check is made to ensure that the changes are saved successfully to the database using the userRepository.SaveAllAsync method.
+
+If the changes are saved successfully, the method returns a PhotoDTO by mapping the Photo entity to it using AutoMapper.
+
+If there are issues with saving changes, a bad request with the message "problem adding photo" is returned.
+
+The instructor ensures that the userRepository.GetUsersByUsernameAsync method used in GetUsername correctly includes the Photos collection to avoid any lazy-loading issues.
+
+This new method enables users to upload photos to their profiles. In the next lesson, the instructor plans to test the ability to upload an image in the application.
