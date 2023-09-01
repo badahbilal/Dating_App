@@ -1,0 +1,11 @@
+In this lesson, the instructor sets up Cloudinary integration in the application for image upload. They install the Cloudinary SDK from NuGet and configure it with the necessary settings.
+
+Here's a summary of the steps taken in this lesson:
+
+Installed the Cloudinary SDK via NuGet.
+Added configuration settings for Cloudinary (cloud name, API key, and API secret) in the appsettings.json file. These settings should be kept secret.
+Created a C# class named CloudSettings to strongly type the Cloudinary configuration.
+Added the Cloudinary configuration to the application service extensions, allowing the application to access these settings.
+The lesson emphasizes the importance of keeping the API secret secure, as it's critical for security. The instructor also highlights the need for careful configuration setup to avoid issues later on.
+
+In the next lesson, the instructor plans to add a service for photo upload and deletion.

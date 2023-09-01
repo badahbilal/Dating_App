@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Data;
+using API.Helpers;
 using API.Interfaces;
 using API.Services;
 using Microsoft.EntityFrameworkCore;
@@ -42,6 +43,10 @@ namespace API.Extensions
 
             // Configure AutoMapper and register it with the application's services.
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            // Configure the 'CloudinarySettings' class using values from the application configuration.
+            services.Configure<CloudinarySettings>(configuration.GetSection("CloudinarySettings"));
+
 
 
             return services;
