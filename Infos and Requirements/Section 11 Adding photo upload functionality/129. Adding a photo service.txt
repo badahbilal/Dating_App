@@ -1,0 +1,11 @@
+In this lesson, the instructor creates a PhotoService to handle photo uploads and deletions. They also implement the IPhotoService interface with two asynchronous methods:
+
+AddPhotoAsync: This method handles the upload of an image. It creates parameters for the image upload, checks if a file exists, and then uploads the image to Cloudinary. It also applies transformations like cropping and gravitates towards faces in the image. The uploaded image is placed in a folder named "net7" for organization.
+
+DeletePhotoAsync: This method handles the deletion of an image from Cloudinary. It takes the public ID of the image as a parameter and deletes it using Cloudinary's destroyAsync method.
+
+The instructor emphasizes the importance of properly disposing of resources, such as the file stream, and explains the logic behind the transformations applied to the uploaded images.
+
+After creating the PhotoService and implementing the interface, the instructor adds it to the application service extensions so that it can be injected into other classes.
+
+In the next lesson, the instructor plans to use this PhotoService for photo upload and deletion within the application.

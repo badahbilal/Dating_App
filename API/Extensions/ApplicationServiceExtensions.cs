@@ -48,6 +48,11 @@ namespace API.Extensions
             services.Configure<CloudinarySettings>(configuration.GetSection("CloudinarySettings"));
 
 
+            // Register the 'PhotoService' class as a scoped service implementing the 'IPhotoService' interface.
+            services.AddScoped<IPhotoService, PhotoService>();
+
+
+
 
             return services;
         }
