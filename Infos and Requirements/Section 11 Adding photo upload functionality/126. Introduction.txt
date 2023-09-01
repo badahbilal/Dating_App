@@ -1,0 +1,18 @@
+In Section 11 of the course, the focus is on adding image upload functionality to the application. The learning goals for this section include:
+
+Storage Options for Photos: Discussing different options for storing photos, including databases, file systems, and cloud services.
+
+Adding Related Entities: Implementing a system where photos cannot be added directly but must be associated with a user entity.
+
+Third-Party API Integration: Exploring the use of a third-party API, specifically Cloudinary, for photo storage and manipulation.
+
+Debugging: Using the debugger to step through and understand the logic behind the image upload process.
+
+Updating and Deleting Resources: Examining how to update and delete resources in the API controller, with a focus on returning the appropriate responses for creating resources in a REST-based API.
+
+The section will cover the process of securely uploading photos to Cloudinary, storing their URLs in the database, and returning the necessary response to the client. This approach ensures that only authenticated users can upload images and that the images are efficiently stored and managed in a cloud service. The goal is to provide a practical solution for image handling in the application.
+
+
+
+
+
