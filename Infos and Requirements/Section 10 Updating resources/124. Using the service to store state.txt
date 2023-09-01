@@ -1,0 +1,16 @@
+Summary:
+The speaker discusses the issue of data retention and loading inefficiency in an Angular application when navigating between components. They introduce a solution by using services to store and manage data, specifically user information. Here are the steps they took briefly:
+
+Identified the problem: Moving between components caused data loss, leading to unnecessary API calls.
+
+Proposed solution: Utilize Angular services to store user data, ensuring it persists throughout the application's lifecycle.
+
+Implementation steps:
+a. Created a property for members in the member service, initially set to an empty array.
+b. Modified the getMembers method to check if members are already present in the service. If so, return them; otherwise, fetch from the API.
+c. Implemented a similar approach for retrieving individual members and updating member profiles.
+d. In the member list component, made the list of members an observable and used the async pipe to handle subscriptions, eliminating the need for a loadMembers method.
+
+Verified the functionality: Checked that data loading and updates work smoothly without unnecessary API calls.
+
+Committed changes and completed the section of development.
