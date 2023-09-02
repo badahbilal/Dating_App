@@ -1,0 +1,14 @@
+In this lesson, the instructor discusses the appropriate HTTP response status codes for different types of API requests in a RESTful API, specifically focusing on the HTTP POST request for creating a new resource. Here's a summary of the key points:
+
+HTTP Response Status Codes:
+
+For an HTTP GET request, a 200 OK response is typically used.
+For an HTTP PUT request to update a resource, a 204 No Content response is common. The response does not include the updated resource itself.
+For an HTTP POST request to create a new resource, a 201 Created response should be returned, indicating that the resource has been successfully created. Additionally, a "Location" header should be included in the response to provide the URL where the newly created resource can be found.
+The "CreatedAtAction" Method: To return a 201 Created response with a "Location" header in ASP.NET Core, you can use the "CreatedAtAction" method. This method allows you to specify the name of the action (method) and the route values to generate the URL of the newly created resource.
+
+Example Usage: In the code example provided, the instructor demonstrates how to use "CreatedAtAction" to return a 201 Created response with a "Location" header pointing to the user's profile URL, which includes the newly created photo resource.
+
+Testing the Response: The instructor uses Postman to send an HTTP POST request to add a photo for a user. The response received includes a 201 Created status code and a "Location" header with the URL of the user's profile.
+
+The lesson emphasizes the importance of using the appropriate HTTP status codes and headers when designing a RESTful API, as it helps communicate the outcome of the request to the client and provides information on how to access the newly created resource.
