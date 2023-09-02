@@ -1,0 +1,17 @@
+In this lesson, the instructor demonstrates debugging by setting breakpoints in the code to inspect variables and the flow of execution. The following steps were performed:
+
+A breakpoint is added on line 64, just before calling the photoService.AddPhotoAsync method.
+
+The debugger is started using the "dotnet core attach" option, attaching to the running application.
+
+Postman is used to test the API endpoint for adding a photo. A form data request is used, specifying the file with the correct key ("file").
+
+When the request is sent, the debugger hits the breakpoint, and the instructor inspects the variables. The results variable, which holds the image upload result, is checked. No errors are found in the result, indicating a successful image upload to Cloudinary.
+
+The instructor proceeds to step through the code, creating a new Photo entity, checking if it's the user's first photo, adding the photo to the user's collection, and saving changes to the database.
+
+After completing the debugging process, the instructor removes the breakpoint and performs additional tests with Postman to ensure that image uploads are functioning correctly.
+
+Finally, the instructor mentions the HTTP response status code and indicates that the application should return a 201 (Created) response status code when a new resource is created via an HTTP POST request. This will be addressed in the next lesson.
+
+Debugging is an essential skill for developers to identify and resolve issues in their code effectively, as demonstrated in this lesson.
